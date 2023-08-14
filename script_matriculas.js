@@ -10,7 +10,7 @@ temLaudo = () => {
         document.getElementById('checkDidaticos1').checked = false;
         calculaMensalidade1()
     } else {
-        checkBox.checked = false; 
+        checkBox.checked = false;
         document.getElementById('parceria1').readOnly = false;
         document.getElementById("desconto1").readOnly = false;
         document.getElementById("desconto1").style.color = "black";
@@ -259,22 +259,22 @@ function somarValorFinal() {
     let v1 = document.getElementById('serie1').value
     if (v1 === "") {v1 = 0}
     let va1 = document.getElementById('valorFinal1').value
-    if (va1 === "") {va1 = 0} 
+    if (va1 === "") {va1 = 0}
 
     let v2 = document.getElementById('serie2').value
     if (v2 === "") {v2 = 0}
     let va2 = document.getElementById('valorFinal2').value
-    if (va2 === "") {va2 = 0} 
+    if (va2 === "") {va2 = 0}
 
     let v3 = document.getElementById('serie3').value
     if (v3 === "") {v3 = 0}
     let va3 = document.getElementById('valorFinal3').value
-    if (va3 === "") {va3 = 0} 
+    if (va3 === "") {va3 = 0}
 
     let v4 = document.getElementById('serie4').value
-    if (v4 === "") {v4 = 0} 
+    if (v4 === "") {v4 = 0}
     let va4 = document.getElementById('valorFinal4').value
-    if (va4 === "") {va4 = 0} 
+    if (va4 === "") {va4 = 0}
 
     let totalIntegral = parseFloat(v1)+parseFloat(v2)+parseFloat(v3)+parseFloat(v4)
     let descontoMes = parseFloat(v1-va1) + parseFloat(v2-va2) + parseFloat(v3-va3) + parseFloat(v4-va4)
@@ -473,12 +473,12 @@ function gerarPDF() {
     }
         
     var options = {filename: alunos}
-    
+
     //try {
         html2pdf(dados, options)
             .from(dados)
-            .save()
-            
+            // .save()
+
     //}
     //catch (e) {
         // console.error(e)        
