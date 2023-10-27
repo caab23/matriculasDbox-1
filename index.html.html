@@ -14,37 +14,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <!-- <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script> -->
     <script src="html2pdf.bundle.min.js"></script>
     <!-- <script src="html2pdf.bundle.js"></script> -->
     <script src="script_matriculas.js"></script>
-    <script src="https://kit.fontawesome.com/8abf0ff8b8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <footer class="footerprincipal">
-        <a href="https://docs.google.com/spreadsheets/d/1HR_bXTwCDbE5OUj2aRj7DiL0zffWU6xiGb_ICRYH0sM/edit#gid=183482623" target="_blank">Vagas</a>
-        <a href="https://docs.google.com/spreadsheets/d/1w6oDCjom87jLNrvSpCIO8-GGdbDlSm9j7iwI16JO4dc/edit#gid=0" target="_blank">Inclusão</a>
-        <a href="https://drive.google.com/drive/u/1/folders/1OQB-_YziWbeMfuSmuefWvL5XqtyzLEim" target="_blank">Entrevista</a>
-        <a href="" target="_blank">Contraturno</a>
-        <a href="https://catalogontstore.asp.org.br" target="_blank">Loja</a>
-        <a href="" target="_blank">Materiais</a>
-        <a onclick="toggleDocumentos()">Documentos</a>
-        <a href="" target="_blank">Transporte</a>
-        <a href="" target="_blank">Cantina</a>
-    </footer>
+    
 <div id="conteiner">
     <!-- CONTEINER ESQUERDA -->
     <div id="esquerda">
-        <nav class="navbar navbar-dark bg-primary ">
-
+        <nav class="navbar navbar-dark bg-primary">
             <div class="lh-100">
-                <h6 class="mb-0 text-white lh-100">DBox - Atendimento</h6>   
+                <h6 class="mb-0 text-white lh-100">Colégio Adventista Centenário</h6>
+                <!-- <small class="text-white">Muito Além do Ensino - Matrículas 2021</small> -->
             </div>
-
         </nav>
+
+        
 
         <div id="fPessoas">
             <form id="form">    
@@ -52,9 +39,6 @@
                 <div class="sub-conteiner sub-conteiner-responsaveis">
                     
                     <input id="input-responsaveis" placeholder="Responsáveis" type="text" class="form-control form-control-sm nome">
-
-                    <input type="text" id="codigoddd" class="
-                    ddd" value="41" placeholder="41">
 
                     <input id="input-melhor-contato" placeholder="Contato" type="text" class="form-control form-control-sm nome">
 
@@ -66,27 +50,27 @@
                     <div class="sub-conteiner">
 
                         <!-- Nome aluno 1 -->
-                        <input id="txtNome1" style="width: 65%;" placeholder="Nome" type="text" class="form-control form-control-sm nome nomealuno"  
+                        <input id="txtNome1" style="width: 65%;" placeholder="Nome" type="text" class="form-control form-control-sm nome"  
                             aria-describedby="emailHelp">
                         
                             <!-- Série aluno 1 -->
                         <select style="width: 35%;" id="serie1" class="form-control form-control-sm serie" onchange="calculaMensalidade1()">
                             <option value="0.0">Série</option>
-                            <option value="999">Infantil 3 anos</option>
-                            <option value="981">Infantil 4 anos</option>
-                            <option value="981">Infantil 5 anos</option>
-                            <option value="1178">1º Fundamental</option>
-                            <option value="1178">2º Fundamental</option>
-                            <option value="1178">3º Fundamental</option>
-                            <option value="1178">4º Fundamental</option>
-                            <option value="1178">5º Fundamental</option>
-                            <option value="1325">6º Fundamental</option>
-                            <option value="1325">7º Fundamental</option>
-                            <option value="1325">8º Fundamental</option>
-                            <option value="1325">9º Fundamental</option>
-                            <option value="1546">1º Ensino Médio</option>
-                            <option value="1546">2º Ensino Médio</option>
-                            <option value="1546">3º Ensino Médio</option>
+                            <option value="999">Inf. 3</option>
+                            <option value="981">Inf. 4</option>
+                            <option value="981">Inf. 5</option>
+                            <option value="1178">1º Fund.</option>
+                            <option value="1178">2º Fund.</option>
+                            <option value="1178">3º Fund.</option>
+                            <option value="1178">4º Fund.</option>
+                            <option value="1178">5º Fund.</option>
+                            <option value="1325">6º Fund.</option>
+                            <option value="1325">7º Fund.</option>
+                            <option value="1325">8º Fund.</option>
+                            <option value="1325">9º Fund.</option>
+                            <option value="1546">1º Méd.</option>
+                            <option value="1546">2º Méd.</option>
+                            <option value="1546">3º Méd.</option>
                             <option value="938">Contraturno</option>
                         </select>
                         
@@ -100,33 +84,22 @@
                         <input id="parceria1" style="width: 65%;" placeholder="Parceria" list="listParceiros1" 
                             class="form-control form-control-sm parcerias" name="parcerias" onchange="calculaMensalidade1()">
                         <datalist id="listParceiros1">
-                            
-                            <option value="Caminho do Bem">Caminho do Bem</option>
-                            <option value="Alegria de Ser Ciança">Alegria de Ser Ciança</option>
-                            <option value="Tia Bety">Tia Bety</option>
-                            <option value="Aquarela">Aquarela</option>
-                            <option value="Escola Monte Sião">Escola Monte Sião</option>
-                            <option value="Alfabeto Mágico">Alfabeto Mágico</option>
-                            <option value="Mundo Criança">Mundo Criança</option>
-                            <option value="Visão do Futuro">Visão do Futuro</option>
-                            <option value="Romanni">Romanni</option>
-                            <option value="Infância Colorida">Infância Colorida</option>
-                            <option value="CEI Genial">Cei Genial</option>
-                            <option value="CEI Cantinho de Sol">Cei Cantinho de Sol</option>
-                            <option value="Nova Super Kids">Nova Super Kids</option>
-                            <option value="Leãozinho de Judá">Leãozinho de Judá</option>
-                            <option value="Caminhos do Sol">Caminhos do Sol</option>
-                            <option value="Estação Felicidade">Estação Felicidade</option>
-                            <option value="Obra Prima">Obra Prima</option>
-                            <option value="Frei Tito">Frei Tito</option>
-                            <option value="São Carlos Borromeo">São Carlos Borromeo</option>
-                            <option value="Catavento">Catavento</option>
-                            <option value="Nosso Jardim">Nosso Jardim</option>
-                            <option value="Doce Ninho">Doce Ninho</option>
-                            <option value="Recanto da Criança">Recanto da Criança</option>
-                            <option value="Túnel do Tempo">Túnel do Tempo</option>
-
-
+                            <option value="Centro de Educação Infantil Érico Veríssimo"></option>
+                            <option value="Escola de Ensino Fundamental Rolândia"></option>
+                            <option value="Escola Ensino Fundamental Leonor Castellano">
+                            <option value="Escola Ensino Fundamental Professora Maria Augusta Jouve"></option>
+                            <option value="Essencial - Centro de Educação Infantil"></option>
+                            <option value="Reino das Ideias"></option>
+                            <option value="CEI Caminho Para o Futuro"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Centro de Educação Infantil Pequeno Mundo"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Escola de Educacional Infantil João de Barros"></option>
+                            <option value="ABC KIDS Berçário e Educação Infantil"></option>
+                            <option value="Escola Batista Shalon (Não aceita cartão presente)"></option>
+                            <option value="Centro de Educação Infantil Portinari"></option>
+                            <option value="Centro de Educação Infantil Davinci"></option>
+                            <option value="Centro de Educação Infantil Anjo Gabriel"></option>
                             <option value="AAM do Brasil">AAM do Brasil </option>
                             <option value="ASPP Associação dos Servidores Públicos do Paraná">ASPP  Associação dos Servidores Públicos do Paraná</option>
                             <option value="Assoc Brasileira de Advogados">Assoc Brasileira de Advogados</option>
@@ -351,23 +324,17 @@
                     <div class="divCheck">
                         <!-- Laudo aluno1 -->
                         <div>
+                            <label for="checkLaudo1">Laudo/Atendimento especial</label>
                             <input type="checkbox" name="" id="checkLaudo1" onclick="temLaudo()">
-                            <label for="checkLaudo1">Inclusão/hipótese</label>
                         </div>
                         <!-- Didáticos aluno1 -->
                         <div class="div-didaticos">
-                            <input type="checkbox" name="" id="checkDidaticos1" onclick="incluirDidaticos1()">
                             <label for="checkDidaticos1">Incluir Didáticos</label>
+                            <input type="checkbox" name="" id="checkDidaticos1" onclick="incluirDidaticos1()">
                         </div>
-                        <!-- valor dos livros 1 -->
-                        <div class="valordidaticos">
-                            <span class="bookicon" id="bookicon1">
-                                <i class="fa-solid fa-book"></i>
-                            </span>
-                            <span class="didaticosvalorsemdesconto" id="didaticosvalorsemdesconto1"></span>
-                            <span class="didaticosmenos40porcento" id="didaticosmenos40porcento1"></span>
-                            <span class="didaticosdif" id="didaticosdif"></span>
-                        </div>
+                        <!-- <div class="copiar">
+                            <img src="imagens/copy.png" alt="" onclick="copiarDados()">
+                        </div> -->
                     </div>
 
 
@@ -377,26 +344,26 @@
                 <div class="conteiner">
                     <div class="sub-conteiner">
                         
-                        <input id="txtNome2" style="width: 65%;" placeholder="Nome" type="text" class="form-control form-control-sm nome nomealuno" 
+                        <input id="txtNome2" style="width: 65%;" placeholder="Nome" type="text" class="form-control form-control-sm nome" 
                             aria-describedby="emailHelp">           
                         
                         <select id="serie2" style="width: 35%;" class="form-control form-control-sm serie" onchange="calculaMensalidade2()">
                             <option value="0.0">Série</option>
-                            <option value="999">Infantil 3 anos</option>
-                            <option value="981">Infantil 4 anos</option>
-                            <option value="981">Infantil 5 anos</option>
-                            <option value="1178">1º Fundamental</option>
-                            <option value="1178">2º Fundamental</option>
-                            <option value="1178">3º Fundamental</option>
-                            <option value="1178">4º Fundamental</option>
-                            <option value="1178">5º Fundamental</option>
-                            <option value="1325">6º Fundamental</option>
-                            <option value="1325">7º Fundamental</option>
-                            <option value="1325">8º Fundamental</option>
-                            <option value="1325">9º Fundamental</option>
-                            <option value="1546">1º Ensino Médio</option>
-                            <option value="1546">2º Ensino Médio</option>
-                            <option value="1546">3º Ensino Médio</option>
+                            <option value="999">Inf. 3</option>
+                            <option value="981">Inf. 4</option>
+                            <option value="981">Inf. 5</option>
+                            <option value="1178">1º Fund.</option>
+                            <option value="1178">2º Fund.</option>
+                            <option value="1178">3º Fund.</option>
+                            <option value="1178">4º Fund.</option>
+                            <option value="1178">5º Fund.</option>
+                            <option value="1325">6º Fund.</option>
+                            <option value="1325">7º Fund.</option>
+                            <option value="1325">8º Fund.</option>
+                            <option value="1325">9º Fund.</option>
+                            <option value="1546">1º Méd.</option>
+                            <option value="1546">2º Méd.</option>
+                            <option value="1546">3º Méd.</option>
                             <option value="938">Contraturno</option>
                             
                         </select>
@@ -413,31 +380,22 @@
 
                             <!-- Escola de origem ou parcerias Aluno2 -->
                         <datalist id="listParceiros2">
-                            <option value="Caminho do Bem">Caminho do Bem</option>
-                            <option value="Alegria de Ser Ciança">Alegria de Ser Ciança</option>
-                            <option value="Tia Bety">Tia Bety</option>
-                            <option value="Aquarela">Aquarela</option>
-                            <option value="Escola Monte Sião">Escola Monte Sião</option>
-                            <option value="Alfabeto Mágico">Alfabeto Mágico</option>
-                            <option value="Mundo Criança">Mundo Criança</option>
-                            <option value="Visão do Futuro">Visão do Futuro</option>
-                            <option value="Romanni">Romanni</option>
-                            <option value="Infância Colorida">Infância Colorida</option>
-                            <option value="CEI Genial">Cei Genial</option>
-                            <option value="CEI Cantinho de Sol">Cei Cantinho de Sol</option>
-                            <option value="Nova Super Kids">Nova Super Kids</option>
-                            <option value="Leãozinho de Judá">Leãozinho de Judá</option>
-                            <option value="Caminhos do Sol">Caminhos do Sol</option>
-                            <option value="Estação Felicidade">Estação Felicidade</option>
-                            <option value="Obra Prima">Obra Prima</option>
-                            <option value="Frei Tito">Frei Tito</option>
-                            <option value="São Carlos Borromeo">São Carlos Borromeo</option>
-                            <option value="Catavento">Catavento</option>
-                            <option value="Nosso Jardim">Nosso Jardim</option>
-                            <option value="Doce Ninho">Doce Ninho</option>
-                            <option value="Recanto da Criança">Recanto da Criança</option>
-                            <option value="Túnel do Tempo">Túnel do Tempo</option>
-                            
+                            <option value="Centro de Educação Infantil Érico Veríssimo"></option>
+                            <option value="Escola de Ensino Fundamental Rolândia"></option>
+                            <option value="Escola Ensino Fundamental Leonor Castellano">
+                            <option value="Escola Ensino Fundamental Professora Maria Augusta Jouve"></option>
+                            <option value="Essencial - Centro de Educação Infantil"></option>
+                            <option value="Reino das Ideias"></option>
+                            <option value="CEI Caminho Para o Futuro"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Centro de Educação Infantil Pequeno Mundo"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Escola de Educacional Infantil João de Barros"></option>
+                            <option value="ABC KIDS Berçário e Educação Infantil"></option>
+                            <option value="Escola Batista Shalon (Não aceita cartão presente)"></option>
+                            <option value="Centro de Educação Infantil Portinari"></option>
+                            <option value="Centro de Educação Infantil Davinci"></option>
+                            <option value="Centro de Educação Infantil Anjo Gabriel"></option>
                             <option value="AAM do Brasil">AAM do Brasil </option>
                             <option value="ASPP Associação dos Servidores Públicos do Paraná">ASPP  Associação dos Servidores Públicos do Paraná</option>
                             <option value="Assoc Brasileira de Advogados">Assoc Brasileira de Advogados</option>
@@ -650,22 +608,13 @@
                     <div class="divCheck">
                         <!-- Laudo aluno2 -->
                         <div>
+                            <label for="checkLaudo2">Laudo/Atendimento especial</label>
                             <input type="checkbox" name="" id="checkLaudo2" onclick="temLaudo2()">
-                            <label for="checkLaudo2">Inclusão/hipótese</label>
                         </div>
                         <!-- Didáticos aluno2 -->
                         <div class="div-didaticos">
-                            <input type="checkbox" name="" id="checkDidaticos2" onclick="incluirDidaticos2()">
                             <label for="checkDidaticos2">Incluir didáticos</label>
-                        </div>
-                        <!-- valor dos livros 2 -->
-                        <div class="valordidaticos">
-                            <span class="bookicon" id="bookicon2">
-                                <i class="fa-solid fa-book"></i>
-                            </span>
-                            <span class="didaticosvalorsemdesconto" id="didaticosvalorsemdesconto2"></span>
-                            <span class="didaticosmenos40porcento" id="didaticosmenos40porcento2"></span>
-                            <span class="didaticosdif" id="didaticosdif2"></span>
+                            <input type="checkbox" name="" id="checkDidaticos2" onclick="incluirDidaticos2()">
                         </div>
                     </div>
 
@@ -674,26 +623,26 @@
                 <!-- ALUNO 03 -->
                 <div class="conteiner">
                     <div class="sub-conteiner">
-                        <input style="width: 65%;" placeholder="Nome" type="text" class="form-control form-control-sm nome nomealuno" id="txtNome3"
+                        <input style="width: 65%;" placeholder="Nome" type="text" class="form-control form-control-sm nome" id="txtNome3"
                             aria-describedby="emailHelp">            
                         
                         <select id="serie3" style="width: 35%;" class="form-control form-control-sm serie" onchange="calculaMensalidade3()">
                             <option value="0.0">Série</option>
-                            <option value="999">Infantil 3 anos</option>
-                            <option value="981">Infantil 4 anos</option>
-                            <option value="981">Infantil 5 anos</option>
-                            <option value="1178">1º Fundamental</option>
-                            <option value="1178">2º Fundamental</option>
-                            <option value="1178">3º Fundamental</option>
-                            <option value="1178">4º Fundamental</option>
-                            <option value="1178">5º Fundamental</option>
-                            <option value="1325">6º Fundamental</option>
-                            <option value="1325">7º Fundamental</option>
-                            <option value="1325">8º Fundamental</option>
-                            <option value="1325">9º Fundamental</option>
-                            <option value="1546">1º Ensino Médio</option>
-                            <option value="1546">2º Ensino Médio</option>
-                            <option value="1546">3º Ensino Médio</option>
+                            <option value="999">Inf. 3</option>
+                            <option value="981">Inf. 4</option>
+                            <option value="981">Inf. 5</option>
+                            <option value="1178">1º Fund.</option>
+                            <option value="1178">2º Fund.</option>
+                            <option value="1178">3º Fund.</option>
+                            <option value="1178">4º Fund.</option>
+                            <option value="1178">5º Fund.</option>
+                            <option value="1325">6º Fund.</option>
+                            <option value="1325">7º Fund.</option>
+                            <option value="1325">8º Fund.</option>
+                            <option value="1325">9º Fund.</option>
+                            <option value="1546">1º Méd.</option>
+                            <option value="1546">2º Méd.</option>
+                            <option value="1546">3º Méd.</option>
                             <option value="938">Contraturno</option>
                             
                         </select>
@@ -708,31 +657,22 @@
                             class="form-control form-control-sm parcerias" name="parcerias" onchange="calculaMensalidade3()">
 
                             <datalist id="listaParceiros3">
-                                <option value="Caminho do Bem">Caminho do Bem</option>
-                            <option value="Alegria de Ser Ciança">Alegria de Ser Ciança</option>
-                            <option value="Tia Bety">Tia Bety</option>
-                            <option value="Aquarela">Aquarela</option>
-                            <option value="Escola Monte Sião">Escola Monte Sião</option>
-                            <option value="Alfabeto Mágico">Alfabeto Mágico</option>
-                            <option value="Mundo Criança">Mundo Criança</option>
-                            <option value="Visão do Futuro">Visão do Futuro</option>
-                            <option value="Romanni">Romanni</option>
-                            <option value="Infância Colorida">Infância Colorida</option>
-                            <option value="CEI Genial">Cei Genial</option>
-                            <option value="CEI Cantinho de Sol">Cei Cantinho de Sol</option>
-                            <option value="Nova Super Kids">Nova Super Kids</option>
-                            <option value="Leãozinho de Judá">Leãozinho de Judá</option>
-                            <option value="Caminhos do Sol">Caminhos do Sol</option>
-                            <option value="Estação Felicidade">Estação Felicidade</option>
-                            <option value="Obra Prima">Obra Prima</option>
-                            <option value="Frei Tito">Frei Tito</option>
-                            <option value="São Carlos Borromeo">São Carlos Borromeo</option>
-                            <option value="Catavento">Catavento</option>
-                            <option value="Nosso Jardim">Nosso Jardim</option>
-                            <option value="Doce Ninho">Doce Ninho</option>
-                            <option value="Recanto da Criança">Recanto da Criança</option>
-                            <option value="Túnel do Tempo">Túnel do Tempo</option>
-                            
+                                <option value="Centro de Educação Infantil Érico Veríssimo"></option>
+                            <option value="Escola de Ensino Fundamental Rolândia"></option>
+                            <option value="Escola Ensino Fundamental Leonor Castellano">
+                            <option value="Escola Ensino Fundamental Professora Maria Augusta Jouve"></option>
+                            <option value="Essencial - Centro de Educação Infantil"></option>
+                            <option value="Reino das Ideias"></option>
+                            <option value="CEI Caminho Para o Futuro"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Centro de Educação Infantil Pequeno Mundo"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Escola de Educacional Infantil João de Barros"></option>
+                            <option value="ABC KIDS Berçário e Educação Infantil"></option>
+                            <option value="Escola Batista Shalon (Não aceita cartão presente)"></option>
+                            <option value="Centro de Educação Infantil Portinari"></option>
+                            <option value="Centro de Educação Infantil Davinci"></option>
+                            <option value="Centro de Educação Infantil Anjo Gabriel"></option>
                             <option value="AAM do Brasil">AAM do Brasil </option>
                             <option value="ASPP Associação dos Servidores Públicos do Paraná">ASPP  Associação dos Servidores Públicos do Paraná</option>
                             <option value="Assoc Brasileira de Advogados">Assoc Brasileira de Advogados</option>
@@ -947,26 +887,16 @@
 
                     <!-- Checkbox area3 -->
                     <div class="divCheck">
-                        <!-- laudo aluno 3 -->
                         <div>
+                            <label for="checkLaudo3">Laudo/Atendimento especial</label>
                             <input type="checkbox" name="" id="checkLaudo3" onclick="temLaudo3()">
-                            <label for="checkLaudo3">Inclusão/hipótese</label>
                         </div>
-                        <!-- didaticos aluno 3 -->
                         <div class="div-didaticos">
-                            <input type="checkbox" name="" id="checkDidaticos3" onclick="incluirDidaticos3()">
                             <label for="checkDidaticos3">Incluir Didáticos</label>
-                        </div>
-                        <!-- valor dos livros 3 -->
-                        <div class="valordidaticos">
-                            <span class="bookicon" id="bookicon3">
-                                <i class="fa-solid fa-book"></i>
-                            </span>
-                            <span class="didaticosvalorsemdesconto" id="didaticosvalorsemdesconto3"></span>
-                            <span class="didaticosmenos40porcento" id="didaticosmenos40porcento3"></span>
-                            <span class="didaticosdif" id="didaticosdif3"></span>
+                            <input type="checkbox" name="" id="checkDidaticos3" onclick="incluirDidaticos3()">
                         </div>
                     </div>
+
                 </div>
 
                 <!-- ALUNO 04 -->
@@ -974,25 +904,25 @@
                     <div class="sub-conteiner">
 
                         <input id="txtNome4" style="width: 65%;" placeholder="Nome" type="text" 
-                            class="form-control form-control-sm nome nomealuno" aria-describedby="emailHelp">    
+                            class="form-control form-control-sm nome" aria-describedby="emailHelp">    
                         
                         <select id="serie4" style="width: 35%;" class="form-control form-control-sm serie" onchange="calculaMensalidade4()">
                             <option value="0.0">Série</option>
-                            <option value="999">Infantil 3 anos</option>
-                            <option value="981">Infantil 4 anos</option>
-                            <option value="981">Infantil 5 anos</option>
-                            <option value="1178">1º Fundamental</option>
-                            <option value="1178">2º Fundamental</option>
-                            <option value="1178">3º Fundamental</option>
-                            <option value="1178">4º Fundamental</option>
-                            <option value="1178">5º Fundamental</option>
-                            <option value="1325">6º Fundamental</option>
-                            <option value="1325">7º Fundamental</option>
-                            <option value="1325">8º Fundamental</option>
-                            <option value="1325">9º Fundamental</option>
-                            <option value="1546">1º Ensino Médio</option>
-                            <option value="1546">2º Ensino Médio</option>
-                            <option value="1546">3º Ensino Médio</option>
+                            <option value="999">Inf. 3</option>
+                            <option value="981">Inf. 4</option>
+                            <option value="981">Inf. 5</option>
+                            <option value="1178">1º Fund.</option>
+                            <option value="1178">2º Fund.</option>
+                            <option value="1178">3º Fund.</option>
+                            <option value="1178">4º Fund.</option>
+                            <option value="1178">5º Fund.</option>
+                            <option value="1325">6º Fund.</option>
+                            <option value="1325">7º Fund.</option>
+                            <option value="1325">8º Fund.</option>
+                            <option value="1325">9º Fund.</option>
+                            <option value="1546">1º Méd.</option>
+                            <option value="1546">2º Méd.</option>
+                            <option value="1546">3º Méd.</option>
                             <option value="938">Contraturno</option>
                             
                         </select>
@@ -1006,31 +936,22 @@
                             class="form-control form-control-sm parcerias" name="parcerias" onchange="calculaMensalidade4()">
 
                         <datalist id="listaParceiros4">
-                            <option value="Caminho do Bem">Caminho do Bem</option>
-                            <option value="Alegria de Ser Ciança">Alegria de Ser Ciança</option>
-                            <option value="Tia Bety">Tia Bety</option>
-                            <option value="Aquarela">Aquarela</option>
-                            <option value="Escola Monte Sião">Escola Monte Sião</option>
-                            <option value="Alfabeto Mágico">Alfabeto Mágico</option>
-                            <option value="Mundo Criança">Mundo Criança</option>
-                            <option value="Visão do Futuro">Visão do Futuro</option>
-                            <option value="Romanni">Romanni</option>
-                            <option value="Infância Colorida">Infância Colorida</option>
-                            <option value="CEI Genial">Cei Genial</option>
-                            <option value="CEI Cantinho de Sol">Cei Cantinho de Sol</option>
-                            <option value="Nova Super Kids">Nova Super Kids</option>
-                            <option value="Leãozinho de Judá">Leãozinho de Judá</option>
-                            <option value="Caminhos do Sol">Caminhos do Sol</option>
-                            <option value="Estação Felicidade">Estação Felicidade</option>
-                            <option value="Obra Prima">Obra Prima</option>
-                            <option value="Frei Tito">Frei Tito</option>
-                            <option value="São Carlos Borromeo">São Carlos Borromeo</option>
-                            <option value="Catavento">Catavento</option>
-                            <option value="Nosso Jardim">Nosso Jardim</option>
-                            <option value="Doce Ninho">Doce Ninho</option>
-                            <option value="Recanto da Criança">Recanto da Criança</option>
-                            <option value="Túnel do Tempo">Túnel do Tempo</option>
-                            
+                            <option value="Centro de Educação Infantil Érico Veríssimo"></option>
+                            <option value="Escola de Ensino Fundamental Rolândia"></option>
+                            <option value="Escola Ensino Fundamental Leonor Castellano">
+                            <option value="Escola Ensino Fundamental Professora Maria Augusta Jouve"></option>
+                            <option value="Essencial - Centro de Educação Infantil"></option>
+                            <option value="Reino das Ideias"></option>
+                            <option value="CEI Caminho Para o Futuro"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Centro de Educação Infantil Pequeno Mundo"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Escola de Educacional Infantil João de Barros"></option>
+                            <option value="ABC KIDS Berçário e Educação Infantil"></option>
+                            <option value="Escola Batista Shalon (Não aceita cartão presente)"></option>
+                            <option value="Centro de Educação Infantil Portinari"></option>
+                            <option value="Centro de Educação Infantil Davinci"></option>
+                            <option value="Centro de Educação Infantil Anjo Gabriel"></option>
                             <option value="AAM do Brasil">AAM do Brasil </option>
                             <option value="ASPP Associação dos Servidores Públicos do Paraná">ASPP  Associação dos Servidores Públicos do Paraná</option>
                             <option value="Assoc Brasileira de Advogados">Assoc Brasileira de Advogados</option>
@@ -1243,28 +1164,15 @@
 
                     <!-- checkbox area4 -->
                     <div class="divCheck">
-                        <!-- laudo aluno 4 -->
                         <div>
+                            <label for="checkLaudo4">Laudo/Atendimento especial</label>
                             <input type="checkbox" name="" id="checkLaudo4" onclick="temLaudo4()">
-                            <label for="checkLaudo4">Inclusão/hipótese</label>
                         </div>
-                        <!-- didaticos aluno 4 -->
                         <div class="div-didaticos">
-                            <input type="checkbox" name="" id="checkDidaticos4" onclick="incluirDidaticos4()">
                             <label for="checkDidaticos4">Incluir Didáticos</label>
-                        </div>
-                        <!-- valor dos livros 4 -->
-                        <div class="valordidaticos">
-                            <span class="bookicon" id="bookicon4">
-                                <i class="fa-solid fa-book"></i>
-                            </span>
-                            <span class="didaticosvalorsemdesconto" id="didaticosvalorsemdesconto4"></span>
-                            <span class="didaticosmenos40porcento" id="didaticosmenos40porcento4"></span>
-                            <span class="didaticosdif" id="didaticosdif4"></span>
-
+                            <input type="checkbox" name="" id="checkDidaticos4" onclick="incluirDidaticos4()">
                         </div>
                     </div>
-                    
 
                 </div>       
 
@@ -1273,7 +1181,7 @@
                 <div class="conteinerForm" id="conteinerFormTotal">
 
                         <div id="labelTotal">TOTAL</div>
-                        <div id="divSomaTotal"></div>
+                        <div id="divSomaTotal">R$ 0,00</div>
 
                 </div>
             </form>
@@ -1285,7 +1193,6 @@
 
         <!-- TABELA RESUMO -->
             <table id="tabela-resumo" class="table">
-               
                 <thead class="bg-primary" style="color: white;">
                     <tr>
                         <th style="width: 30%; text-align: left;">Nome</th>
@@ -1350,30 +1257,65 @@
             </table>
             
 
-           
+            <!-- Opções de pagamento -->
+            
+            <table id="tabela-opcoes-pg">
+                
+                <tr>
+                    <td>
+                        <input type="radio" id="btn4" name="pgto" value="Opção de pagamento: parcelado no boleto" onclick="myFunctionPg()" checked>
+                        <label for="parceladoBoleto">Parcelado no boleto</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="btn3" name="pgto" value="Opção de pagamento: parcelado no crédito." onclick="myFunctionPg()">
+                        <label for="parceladoCredito">Parcelado no crédito</label>  
+                    </td>
+                    <td>
+                        <input type="radio" id="btn1" name="pgto" value="Opção de pagamento: à vista no débito ou dinheiro." onclick="myFunctionPg()">
+                        <label for="vistaDebitoDin">À vista débito</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="btn2" name="pgto" value="Opção de pagamento: à vista no crédito." onclick="myFunctionPg()">
+                        <label for="vistaCredito">À vista crédito</label>
+                    </td>
+                </tr>
+            </table>
+
+    <!-- Botões de informações adicionais -->
+    <div id="conteiner-btns-esquerda">
+        <button id="btn-ct" class="btn btn-primary" onclick="toggleCT()">Contraturno</button>
+        <button id="btn-taxa" class="btn btn-primary" onclick="toggleInclusao()">Inclusão</button>
+        <button id="btn-materiais" class="btn btn-primary" onclick="toggleMateriais()">Materiais</button>
+        <button id="btn-livros" class="btn btn-primary" onclick="toggleLivros()">Loja</button>
+        <button id="btn-cantina" class="btn btn-primary" onclick="toggleCantina()">Cantina</button>
+        <button id="btn-transporte" class="btn btn-primary" onclick="toggleTransporte()">Transporte</button>
+        <button id="btn-documentos" class="btn btn-primary" onclick="toggleDocumentos()">Documentos</button>
+    </div>  
 
 
-        <div class="container-didaticos-taxa">
+<div class="container-didaticos-taxa">
 
-            <!-- Taxa -->
-            <div id="taxa-eventos">
-                <label for="taxa">Taxa</label>
-                <input id="taxa" type="text" value="560" class="form-control form-control-sm valor">
-                <img src="imagens/info.png" alt="" id="calendar-icon" onclick="toggleTaxa()">
-            </div>
+    <!-- Taxa -->
+    <div id="taxa-eventos">
+        <label for="taxa">Taxa</label>
+        <input id="taxa" type="text" value="560" class="form-control form-control-sm valor">
+        <img src="imagens/calendar.jpg" alt="" id="calendar-icon" onclick="toggleTaxa()">
+        
+    </div>
 
-            <!-- Atendentes -->
-            <div class="conteiner-atendentes">
-                <select class="form-select form-select-sm" aria-label="Default select example" id="select-atendentes">
-                    <option selected value="Daisy (daisy.ferreira@educadventista.org.br)">Atendente</option>
-                    <option value="Alexandro (alexandro.gaspar@educadventista.org.br)">Alexandro</option>
-                    <option value="Daisy (daisy.ferreira@educadventista.org.br)">Daisy</option>
-                    <option value="Douglas (douglas.santos@educadventista.org.br)">Douglas</option>
-                    <option value="Josiane (josiane.vieira@educadventista.org.br)">Josiane</option>
-                </select>
-            </div>
+     <!-- Atendentes -->
+     <div class="conteiner-atendentes">
+        <select class="form-select form-select-sm" aria-label="Default select example" id="select-atendentes">
+            <option selected value="">Atendente</option>
+            <option value="Alexandro - alexandro.gaspar@educadventista.org.br">Alexandro</option>
+            <option value="Daisy - @educadventista.org.br">Daisy</option>
+            <option value="Douglas - douglas.santos@educadventista.org.br">Douglas</option>
+            <option value="Josiane - josiane.vieira@educadventista.org.br">Josiane</option>
+            
+          </select>
+    </div>
 
-        </div>
+</div>
 
     
         <!-- Campo para Observações -->
@@ -1382,17 +1324,14 @@
             <textarea name="tx-obs" id="input-obs" cols="26" rows="20"></textarea>
         </div>
 
-        <!-- Conteiner botões -->
+        <!-- Conteiner Botão Imprimir -->
         <div id="conteiner-buttons">
-            
-            <button class="btn btn-primary"  onclick="gerarPDF()">Imprimir</button>
-            <button id="bt-copiarAcrm" class="btn btn-secondary"  onclick="copiarDados()">Copiar</button>
-            <button class="btn btn-success"  onclick="sendDataToClientWhatsApp()">WhatsApp</button>
-            <button class="btn btn-info" onclick="toggleInfo()">Informações</button>
+            <button class="btn btn-secondary"  onclick="copiarDados()">Copiar</button>
+            <button id="btn-imprimir" class="btn btn-primary"  onclick="gerarPDF()">Imprimir</button>
+
         </div>
-
+        
     </div>
-
 </div>
 
 <!-- ================================================== -->
@@ -1486,8 +1425,7 @@
         <!-- Livros, materiais e uniformes -->
         <div class="adicionais footer-item" id="footer-item-obs">
             <div class="title-item">LIVROS, MATERIAIS E UNIFORMES</div>
-            <div class="content-item-obs" id="last-child-obs">Disponíveis na loja Novo Tempo Store. Acesse todas as informações através do link: <br>
-            <i>https://linktr.ee/novotempostoreasp</i>
+            <div class="content-item-obs" id="last-child-obs">Acesse todas as informações através do link da nossa loja, Novo Tempo Store: https://linktr.ee/novotempostoreasp.
             </div>
         </div>
 
@@ -1496,37 +1434,83 @@
 
             <div class="footer-item">
              <div class="title-item">TAXA DE EVENTOS</div>
-             <div class="content-item"><span id="taxa-valor"></span> por aluno no ato da matrícula. À vista ou até 6x no cartão. Cobre ações em datas especiais do calendário escolar (páscoa, mães, pais, etc.).</div>
+             <div class="content-item"><span id="taxa-valor"></span> por aluno no ato da matrícula - à vista ou até 6x no cartão. Cobre ações em datas especiais do calendário escolar (páscoa, mães, pais, etc.).</div>
             </div>
-            
+           
             <div class="footer-item">
              <div class="title-item">CANTINA</div>
-             <div class="content-item">Serviço terceirizado com supervisão de nutricionista. Informações sobre as formas de pagamento, opções de lanches e outras, falar diretamente com a cantina pelo whatsapp: (41) 99611-7704</div>
+             <div class="content-item">Serviço terceirizado com supervisão de nutricionista. Formas de pagamento: à vista, créditos antecipados ou pelo aplicativo VLUPT. Até o 2º EF, opção de contrato mensal (incluso: 1 salgado, 1 doce, 1 suco, 1 fruta). Contato whatsapp: 41-99672-0012</div>
             </div>
 
         </div>
 
-        <!-- Horário das aulas -->
+        <!-- Contraturno -->
+        <div class="adicionais footer-item" id="footer-item-ct">
+
+            <div class="title-item">CONTRATURNO</div>
+
+            <table class="tabelaCt2" style="width: 93%; margin: 10px auto 0 auto;">
+                <tr  style="text-align: center;">
+                    <td colspan="4"><em>Para alunos que estudam à tarde e chegam pela manhã</em></td>
+                </tr>
+                <tr>
+                    <td style="width: 10%;">Plano</td>
+                    <td style="width: 10%;">Chegada</td>
+                    <td style="width: 70%;">Serviços</td>
+                    <td style="width: 20%;">Valor</td>
+                </tr>
+                <tr>
+                    <td>6h</td>
+                    <td>7:00</td>
+                    <td style="text-align: left;">Almoço, Tarefas, 2 Lanches, Projeto, 2 Oficinas, Esporte, Recreação</td>
+                    <td>R$ 722,00</td>
+                </tr>
+                <tr>
+                    <td>3h</td>
+                    <td>10:00</td>
+                    <td style="text-align: left;">Almoço, 1 Lanche, Tarefas, Projeto, 1 Oficina</td>  
+                    <td>R$ 577,60</td>
+                </tr>
+            </table>
+    <br>
+            <table class="tabelaCt2" style="width: 93%; margin: 10px auto 14px auto;">
+                <tr  style="text-align: center;">
+                    <td colspan="4"><em>Para alunos que estudam pela manhã e permanecem à tarde</em></td>
+                </tr>
+                <tr>
+                    <td style="width: 10%;">Plano</td>
+                    <td style="width: 10%;">Saída</td>
+                    <td style="width: 70%;">Serviços</td>
+                    <td style="width: 20%;">Valor</td>
+                </tr>
+                <tr>
+                    <td>3h</td>
+                    <td>15:00</td>
+                    <td style="text-align: left;">Almoço, 1 Lanche, Tarefas, Projeto, 1 Oficina</td>  
+                    <td>R$ 577,60</td>
+                </tr>
+                <tr>
+                    <td>6h</td>
+                    <td>18:00</td>
+                    <td style="text-align: left;">Almoço, Tarefas, 2 Lanches, Projeto, 2 Oficinas, Esporte, Recreação</td>
+                    
+                    <td>R$ 722,00</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Horários das aulas -->
         <div class="adicionais footer-item" id="footer-item-ct">
 
             <div class="title-item">HORÁRIOS DAS AULAS</div>
 
-                <ul>
-                    <li>Manhã
-                        <ul>
-                            <li>7:15 às 11:40 (Infantil até 9º ano)</li>
-                            <li>7:15 às 12:30 (Ensino Médio)</li>
-                        </ul>
-                    </li>
-                    <li>Tarde
-                        <ul>
-                            <li>13:00 às 17:40</li>
-                            <li>13:00 às 16:40 (sexta-feira)</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+           <P>Item 1</P>
+           <P>Item 2</P>
+           <P>Item 3</P>
+           <P>Item 4</P>
+           <P>Item 5</P>
         </div>
+    </div>
 
     <!-- Observações -->
     <div class="adicionais footer-item" id="observacoes-text-area">
@@ -1553,55 +1537,29 @@
 <!-- ================================================== -->
 <!-- ================================================== -->
 <!-- POPUP TAXA -->
-<div class="popup" id="popupInfo">
+<div class="popup popupTaxa" id="popupTaxa">
+
     <div class="overlay"></div>
+    
     <div class="content">
-        <div class="close-btn" onclick="toggleInfo()"><i class="fa-solid fa-circle-xmark"></i>;</div>
+        <div class="close-btn" onclick="toggleTaxa()">&times;</div>
         <br><br>
-        <h5>Informações</h5>
+        <h5>Taxa de Eventos</h5>
         <hr>
         <ul>
-            <li>Início das aulas: 05/02/2023 (para melhor adaptação, algumas séries poderão mudar o dia)</li>
-            <li>Comunicados oficiais: aplicativo agenda (ou agenda adventista)</li>
-            <li>Antes de iniciar as aulas, enviaremos comunicados por e-mail ou whatsapp dos responsáveis (até finalizar o cadastro no aplicativo)</li>
-            <li>Entrevista pedagógica é obrigatória para finalizar a matrícula</li>
-            <li>Contraturno não terá período intermediário em 2024.</li>
+            <li>Alunos novos - R$ 560,00 (valor único)</li>
         </ul>
+        <hr>
+        <ul>
+            <li>Alunos veteranos</li><br>
+            <p>=> Até 17/09 - R$ 392,00</p>
+            <p>=> A partir de 18/09 - R$ 560,00</p>
+        </ul>
+        <hr>
+       
     </div>
 </div>
 
-<!-- POPUP TAXA -->
-<div class="popup" id="popupTaxa">
-    <div class="overlay">
-        <div class="content">
-            <div class="close-btn" onclick="toggleTaxa()"><i class="fa-solid fa-circle-xmark"></i>;</div>
-            <br><br>
-            <h5>Taxa de Eventos</h5>
-            <hr>
-            <ul>
-            
-                <li>Alunos novos
-                    <ul>
-                        <li>R$ 590,00 (valor único)</li>
-                        <li>Até 6 vezes</li>
-                        <li>Valor mínimo: R$ 500,00 (confirmar)</li>
-                    </ul>
-                </li>
-            
-                <li>Alunos veteranos
-                    <ul>
-                        <li>Até 17/09 - R$ 392,00</li>
-                        <li>Até 08/10 - R$ 448,00</li>
-                        <li>Pós 08/10 - R$ 560,00</li>
-                    </ul>
-                </li>
-            
-            </ul>
-            <hr>
-        
-        </div>
-    </div>
-</div>
 
 <!-- POPUP CONTRATURNO -->
 <div class="popup" id="popupCt">
@@ -1609,7 +1567,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleCT()"><i class="fa-solid fa-circle-xmark"></i>;</div>
+        <div class="close-btn" onclick="toggleCT()">&times;</div>
         <h5>Contraturno</h5>
 
         <table class="tabelaCt" style="width: 90%; margin: 30px auto 0 auto; font-size: small;">
@@ -1668,7 +1626,7 @@
     
     <div class="content">
        
-        <div class="close-btn" onclick="toggleInclusao()"><i class="fa-solid fa-circle-xmark"></i>;</div>
+        <div class="close-btn" onclick="toggleInclusao()">&times;</div>
        
         <h5>Inclusão</h5>
         
@@ -1702,7 +1660,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleMateriais()"><i class="fa-solid fa-circle-xmark"></i>;</div>
+        <div class="close-btn" onclick="toggleMateriais()">&times;</div>
         <h5>Listas de Materiais</h5>
         
         <table class="tabela-didaticos">
@@ -1762,7 +1720,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleLivros()"><i class="fa-solid fa-circle-xmark"></i>;</div>
+        <div class="close-btn" onclick="toggleLivros()">&times;</div>
         <h5>Novo Tempo Store</h5>
         <br><br>
         <p><a href="https://linktr.ee/novotempostoreasp" target="_blank"><img src="imagens/ntstore-logo.png" alt="" id="nt-logo"></a></p>
@@ -1780,7 +1738,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleCantina()"><i class="fa-solid fa-circle-xmark"></i>;</div>
+        <div class="close-btn" onclick="toggleCantina()">&times;</div>
         <h5>Cantina</h5>
         <br><br>
         <p>Serviço terceirizado com supervisão de Nutricionista. </p>
@@ -1800,7 +1758,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleTransporte()"><i class="fa-solid fa-circle-xmark"></i>;</div>
+        <div class="close-btn" onclick="toggleTransporte()">&times;</div>
         <h5>Transporte Escolar</h5>
     <br><br>
     <p>Serviço terceirizado.</p>
@@ -1818,7 +1776,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleDocumentos()"><i class="fa-solid fa-circle-xmark"></i></div>
+        <div class="close-btn" onclick="toggleDocumentos()">&times;</div>
         <h5>Documentos para Matrícula</h5>
     <br><br>
     <ol>
@@ -1833,12 +1791,10 @@
         <li>Declaração de quitação financeira (se a escola de origem for particular).</li>
     </ol>
 
-    <!-- <p><a href="documentos-para-matricula.pdf" target="_blank" id="lista-materiais">Imprimir lista</a></p> -->
+    <p><a href="documentos-para-matricula.pdf" target="_blank" id="lista-materiais">Imprimir lista</a></p>
         
     </div>
 </div>
 
-    <script src="whatsapp.js"></script>
 </body>
 </html>
-
