@@ -16,20 +16,16 @@ body {
 
 #conteiner {
     width: 98vw;
-    height: 100vh;
-    margin: 0px auto;
-    padding-bottom: 30px;
+    margin: 0 auto;
     display: flex;
+    padding: 1rem;
 }
 
 #esquerda {
-    flex: 1;
+    flex: .9;
     background-color: #f8f8f8;
-    padding: 10px 0px;
-}
-
-#fPessoas {
-    padding: 6px 10px;
+    background-color: #fff;
+    height: fit-content;
 }
 
 .conteiner {
@@ -37,17 +33,15 @@ body {
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 12px;
+    margin-top: 1.5rem;
     border: 1px solid gainsboro;
     border-radius: 5px;
     background-color: #fff;
-    padding: 6px 6px 6px 6px;
-    box-shadow: 1px 1px 4px #c2c2c2;
+    padding: .4rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-left: 7px solid #0D6EFD;
 }
 
-.conteiner/*:not(:first-of-type)*/ {
-    border-left: 5px solid #0D6EFD;
-}
 
 .sub-conteiner {
     width: 100%;
@@ -70,10 +64,10 @@ body {
 
 #conteinerFormTotal {
     background-color: #343A40;
+    background-color: #fff;
     padding: 0;
     display: flex;
     justify-content: space-between;
-    visibility: hidden;
 }
 
 #conteinerFormTotal div {
@@ -85,7 +79,6 @@ body {
 #direita {
     flex: 1;
     background-color: white;
-    padding: 10px 0;
 }
 
  .nome::placeholder, .parcerias::placeholder {
@@ -117,12 +110,13 @@ body {
 
 #input-obs {
     width: 100%;
-    height: 50px;
-    padding: 5px;
+    height: 7.65rem;
+    padding: 1rem;
     border-radius: 5px;
     border: 1px solid lightgray;
     box-shadow: 1px 1px 3px lightgray;
     font-size: small;
+    resize: none;
 }
 
 #input-obs:focus{
@@ -135,13 +129,13 @@ body {
 /* Botão imprimir */
 #conteiner-buttons {
    display: flex;
-   justify-content: space-between;
+   justify-content: flex-start;
 }
   
 #conteiner-buttons>button {
     width: 120px;
     height: 40px;
-    /* margin-left: 2rem; */
+    margin-right: 2rem;
     border-radius: 5px;
     color: #fff;
     font-weight: 500;
@@ -151,27 +145,22 @@ body {
     cursor: pointer;
 }
 
-textarea {
-    max-height: 50px;
-    resize: none;
-}
-
 #tabela-resumo {
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     width: 96%;
     font-size: 12.5px;
     margin: 0 auto;
-    /* table-layout: fixed; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 0 0 5px 5px;
 }
 
 #tabela-resumo th {
-    padding: 7.7px;
     font-weight: 400;
     overflow: hidden;
 }
 
 #tabela-resumo td {
-    height: 40px;
+    height: 3rem;
     color: rgb(71, 71, 71);
     padding: 10px 10px;
     overflow: hidden;
@@ -179,6 +168,7 @@ textarea {
 
 #observacoes, #conteiner-buttons {
     width: 96%;
+    height: fit-content;
     margin: 1rem auto;
 }
 
@@ -208,7 +198,7 @@ textarea {
 /* Tabela com nome, série, parcelas e valor proposto */
 #tabela_resumo {
     width: 100%;
-    margin: 0;
+    margin: 2rem 0;
     padding: 0;
     font-size: 13px;
 }
@@ -225,7 +215,6 @@ textarea {
 }
 
 #conteiner-btns-esquerda {
-    /* margin-top: 10px; */
     display: flex;
     justify-content: flex-start;
     padding: 10px;
@@ -374,6 +363,7 @@ ul li p {
     margin: 0;
 }
 
+
 .title-item {
     padding: 18px 10px 4px 18px;
     font-weight: bolder;    
@@ -383,7 +373,7 @@ ul li p {
    
 .content-item {
     padding: 4px 15px 7px 18px;
-    color: #202020;
+    color: #000;
     font-size: xx-small;
 }
 
@@ -391,7 +381,7 @@ ul li p {
     padding: 0 18px;
     margin: 0;
     font-size: xx-small;
-    color: #202020;
+    color: #000;
 }
 
 #last-child-obs {
@@ -440,26 +430,17 @@ ul li p {
     width: 96%;
     display: flex;
     justify-content: space-between;
-    margin: 4px auto 0 auto;
-    padding: 14px 0;
-    border-bottom: 1px solid lightgray;
+    margin: 3rem auto 0 auto;
+    padding: 1rem;
+    box-shadow: 1px 1px 4px #c2c2c2;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
 }
 
 .container-didaticos-taxa div {
     display: flex;
     flex: 1;
-    /* border: 1px solid red; */
 }
-/* 
-.container-didaticos-taxa div:nth-child(1) {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.container-didaticos-taxa div:nth-child(2) {
-    display: flex;
-    justify-content: flex-end;
-} */
 
 #taxa {
     width: 40%;
@@ -494,9 +475,10 @@ ul li p {
 #observacoes-text-area {
     font-size: xx-small;
     width: 91%;
-    margin-top: 12px;
+    margin-top: 1rem;
     height: fit-content;
     box-shadow: 3px 3px 5px darkgray;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-left: 4px solid #707070;
     border-radius: 7px;
     border-top: 1px solid whitesmoke;
@@ -526,7 +508,6 @@ ul li p {
     text-decoration: none;
     font-family: 'Lato';
     padding: 6px 24px;
-    /* border: 1px solid white; */
 }
 
 #vlupt-logo {
@@ -589,23 +570,29 @@ ul li p {
     top: 4px;
 }
 
-#txtNome1, #txtNome2, #txtNome3, #txtNome4 {
+#txtNome1, #txtNome2, #txtNome3, #txtNome4, #input-melhor-contato {
     color: #0D6EFD;
     font-weight: 800;
 }
 
 #input-responsaveis {
     color: #0D6EFD;
-    width: 70%;
+    width: 65%;
+}
+
+#codigoddd {
+    width: 10%;
+    color: rgb(165, 165, 165);
+    text-align: center;
+    border: 1px solid #ced4da;
 }
 
 #input-melhor-contato {
-    width: 30%;
+    width: 25%;
     text-align: right;
 }
 
 #calendar-icon {
-    /* border: 1px solid red; */
     width: 20px;
     height: 20px;
     margin-left: .5rem;
@@ -620,6 +607,49 @@ ul li p {
 }
 
 .div-didaticos {
-    /* border: 1px solid red; */
     margin-left: 2rem;
+}
+
+.footerprincipal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 236, 236);
+    padding: .8rem;
+}
+
+.footerprincipal a {
+    padding: 0 1rem;
+    color: gray;
+    text-decoration: none;
+    font-family: 'Roboto condensed', sans-serif;
+    font-size: .8rem;
+}
+
+.footerprincipal a:hover {
+    text-decoration: none;
+    color: #0D6EFD;
+}
+
+.bookicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.bookicon, .didaticosvalorsemdesconto, .didaticosmenos40porcento, .didaticosdif {
+    padding-right: .5rem;
+    margin-right: 1rem;
+    font-size: .7rem;
+}
+
+.didaticosvalorsemdesconto, .didaticosmenos40porcento, .didaticosdif {
+    width: 3.2rem;
+    text-align: right;
+}
+
+.footerprincipal a:hover {
+    color: black;
+    cursor: pointer;
 }
