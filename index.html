@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="dboxfavicon.ico" type="image/x-icon">
+    <title>D-Box Atendimento de Matrículas</title>
+    <link rel="stylesheet" href="style_matriculas.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script> -->
+    <script src="html2pdf.bundle.min.js"></script>
+    <!-- <script src="html2pdf.bundle.js"></script> -->
+    <script src="script_matriculas.js"></script>
+</head>
+<body>
+    
+<div id="conteiner">
+    <!-- CONTEINER ESQUERDA -->
+    <div id="esquerda">
+        <nav class="navbar navbar-dark bg-primary">
+            <div class="lh-100">
+                <h6 class="mb-0 text-white lh-100">Colégio Adventista Alto Boqueirão</h6>
+                <!-- <small class="text-white">Muito Além do Ensino - Matrículas 2021</small> -->
+            </div>
+        </nav>
+
+
+        <div id="fPessoas">
+            <form id="form">    
+            <div class="conteiner">
+                <div class="sub-conteiner sub-conteiner-responsaveis">
+                    
+                    <input id="input-responsaveis" placeholder="Responsáveis" type="text" class="form-control form-control-sm nome">
+
+                    <input id="input-melhor-contato" placeholder="Contato" type="text" class="form-control form-control-sm nome">
+
+                </div>
+            </div>
+
+                <!-- ALUNO 01 -->
+                <div class="conteiner">
+                    <div class="sub-conteiner">
+
+                        <!-- Nome aluno 1 -->
+                        <input id="txtNome1" style="width: 65%;" placeholder="Nome" type="text" class="form-control form-control-sm nome"  
+                            aria-describedby="emailHelp">
+                        
+                            <!-- Série aluno 1 -->
+                        <select style="width: 35%;" id="serie1" class="form-control form-control-sm serie" onchange="calculaMensalidade1()">
+                            <option value="0.0">Série</option>
+                            <option value="1160">Inf. 3</option>
+                            <option value="1002.10">Inf. 4</option>
+                            <option value="1002.10">Inf. 5</option>
+                            <option value="1115">1º Fund.</option>
+                            <option value="1115">2º Fund.</option>
+                            <option value="1115">3º Fund.</option>
+                            <option value="1115">4º Fund.</option>
+                            <option value="1115">5º Fund.</option>
+                            <option value="1314">6º Fund.</option>
+                            <option value="1314">7º Fund.</option>
+                            <option value="1314">8º Fund.</option>
+                            <option value="1314">9º Fund.</option>
+                            <option value="1476.20">1º Méd.</option>
+                            <option value="1476.20">2º Méd.</option>
+                            <option value="1476.20">3º Méd.</option>
+                            <option value="830.30">Contraturno</option>
+                        </select>
+                        
+
+                        <!-- Valor integral aluno 1 -->
+                        <input  id="valorSerie1" style="width: 25%;" type="text" name="valor" class="form-control form-control-sm valor valorIntegral" readonly>
+                    </div>
+                    
+                    <!-- Escola de origem e parcerias aluno 1 -->
+                    <div class="sub-conteiner">
+                        <input id="parceria1" style="width: 65%;" placeholder="Parceria" list="listParceiros1" 
+                            class="form-control form-control-sm parcerias" name="parcerias" onchange="calculaMensalidade1()">
+                        <datalist id="listParceiros1">
+                            <option value="Centro de Educação Infantil Érico Veríssimo"></option>
+                            <option value="Escola de Ensino Fundamental Rolândia"></option>
+                            <option value="Escola Ensino Fundamental Leonor Castellano">
+                            <option value="Escola Ensino Fundamental Professora Maria Augusta Jouve"></option>
+                            <option value="Essencial - Centro de Educação Infantil"></option>
+                            <option value="Reino das Ideias"></option>
+                            <option value="CEI Caminho Para o Futuro"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Centro de Educação Infantil Pequeno Mundo"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Escola de Educacional Infantil João de Barros"></option>
+                            <option value="ABC KIDS Berçário e Educação Infantil"></option>
+                            <option value="Escola Batista Shalon (Não aceita cartão presente)"></option>
+                            <option value="Centro de Educação Infantil Portinari"></option>
+                            <option value="Centro de Educação Infantil Davinci"></option>
+                            <option value="Centro de Educação Infantil Anjo Gabriel"></option>
+                            <option value="AAM do Brasil">AAM do Brasil </option>
+                            <option value="ASPP Associação dos Servidores Públicos do Paraná">ASPP  Associação dos Servidores Públicos do Paraná</option>
+                            <option value="Assoc Brasileira de Advogados">Assoc Brasileira de Advogados</option>
+                            <option value="Assoc de Servidores da Previdência Social">Assoc de Servidores da Previdência Social</option>
+                            <option value="Assoc dos Analistas de Comércio Exterior">Assoc dos Analistas de Comércio Exterior </option>
+                            <option value="Assoc dos Empregados da Apex-Brasil">Assoc dos Empregados da Apex-Brasil </option>
+                            <option value="Assoc dos Servidores da Agência Brasileira de Inteligência">Assoc dos Servidores da Agência Brasileira de Inteligência </option>
+                            <option value="Assoc dos Servidores do Supremo Tribunal Federal">Assoc dos Servidores do Supremo Tribunal Federal </option>
+                            <option value="Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União">Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União </option>
+                            <option value="Assoc Nacional dos Analistas e Especialistas em Infraestrutura">Assoc Nacional dos Analistas e Especialistas em Infraestrutura</option>
+                            <option value="Assoc Nacional dos Defensores Públicos Federais">Assoc Nacional dos Defensores Públicos Federais</option>
+                            <option value="Assoc Nacional dos Peritos Criminais Federais">Assoc Nacional dos Peritos Criminais Federais </option>
+                            <option value="Assoc Nacional dos Procuradores Municipais">Assoc Nacional dos Procuradores Municipais </option>
+                            <option value="Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento">Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento</option>
+                            <option value="Assoc Nacional dos Serv do DNPM">Assoc Nacional dos Serv do DNPM </option>
+                            <option value="Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais">Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais</option>
+                            <option value="Assoc Renault (Colibri)">Assoc Renault (Colibri)</option>
+                            <option value="Bancários">Bancários</option>
+                            <option value="Banco do Brasil">Banco do Brasil</option>
+                            <option value="Bombeiros">Bombeiros</option>
+                            <option value="Caixa Econômica Federal">Caixa Econômica Federal </option>
+                            <option value="Callfarma">Callfarma</option>
+                            <option value="Clube Atlético Paranaense">Clube Atlético Paranaense</option>
+                            <option value="Clube Curitibano">Clube Curitibano</option>
+                            <option value="Clube Santa Mônica">Clube Santa Mônica </option>
+                            <option value="Electrolux">Electrolux</option>
+                            <option value="Empresas do Grupo J Malucelli">Empresas do Grupo J Malucelli</option>
+                            <option value="Federação Nacional dos Policiais Federais - FENAPF">Federação Nacional dos Policiais Federais - FENAPF</option>
+                            <option value="Leroy Merlin">Leroy Merlin</option>
+                            <option value="Ministério Público do Paraná">Ministério Público do Paraná</option>
+                            <option value="Mister Liber Brasil Corretora de Seguros">Mister Liber Brasil Corretora de Seguros </option>
+                            <option value="Paraná Clube">Paraná Clube</option>
+                            <option value="Petrobrás">Petrobrás</option>
+                            <option value="Polícia Civil">Polícia Civil </option>
+                            <option value="Polícia Federal">Polícia Federal</option>
+                            <option value="Polícia Militar">Polícia Militar</option>
+                            <option value="Policiais Rodoviários Federais">Policiais Rodoviários Federais</option>
+                            <option value="Sind dos Agentes de Atividades Penitenciárias">Sind dos Agentes de Atividades Penitenciárias </option>
+                            <option value="Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR">Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR</option>
+                            <option value="Sind dos Jornalistas">Sind dos Jornalistas </option>
+                            <option value="Sind dos Operadores de Transporte Escolar">Sind dos Operadores de Transporte Escolar</option>
+                            <option value="Sind Nac dos Analistas-Tributários da Receita Federal do Brasil">Sind Nac dos Analistas-Tributários da Receita Federal do Brasil </option>
+                            <option value="Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle">Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle </option>
+                            <option value="Sind Nac dos Serv das Agências Nacionais de Regulação">Sind Nac dos Serv das Agências Nacionais de Regulação</option>
+                            <option value="Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU">Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU </option>
+                            <option value="Sind Nac dos Serv do Ministério das Relações Exteriores">Sind Nac dos Serv do Ministério das Relações Exteriores</option>
+                            <option value="Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal">Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal </option>
+                            <option value="Sociedade Brasileira de Direito Médico e Bioética">Sociedade Brasileira de Direito Médico e Bioética </option>
+                            <option value="Wizard">Wizard</option>
+                            <option value="IBMP Instituto de Biologia Molecular do Paraná">IBMP Instituto de Biologia Molecular do Paraná</option>
+                            <option value="ASCREA-PR - Associação dos Servidores do CREA-PR">ASCREA-PR - Associação dos Servidores do CREA-PR</option>
+                            <option value="Copel Companhia Paranaense de Energia">Copel Companhia Paranaense de Energia</option>
+                            <option value="Gerdau Aços Longos S/A">Gerdau Aços Longos S/A</option>
+                            <option value="ACC - Associação Copel Curitiba">ACC - Associação Copel Curitiba</option>
+                            <option value="Branco Motores LTDA">Branco Motores LTDA</option>
+                            <option value="Escolinhas Parceiras">Escolinhas Parceiras</option>
+                            <option value="Loja França">Loja França</option>
+                            <option value="Quero Bolsa do Melhor Escola">Quero Bolsa do Melhor Escola</option>
+                            <option value="ASSESA - União das Associações de Empregados da SANEPAR">ASSESA - União das Associações de Empregados da SANEPAR</option>
+
+
+                            <!-- Parcerias ACP - obtidas da planilha enviada pelo Eduardo em 24/05/2023 -->
+
+                            <option value="AAM do Brasil (ACP)">AAM do Brasil  (ACP)</option>
+                            <option value="ASPP  Associação dos Servidores Públicos do Paraná (ACP)">ASPP  Associação dos Servidores Públicos do Paraná (ACP)</option>
+                            <option value="Assoc Brasileira de Advogados (ACP)">Assoc Brasileira de Advogados (ACP)</option>
+                            <option value="Assoc de Servidores da Previdência Social (ACP)">Assoc de Servidores da Previdência Social (ACP)</option>
+                            <option value="Assoc dos Analistas de Comércio Exterior  (ACP)">Assoc dos Analistas de Comércio Exterior  (ACP)</option>
+                            <option value="Assoc dos Empregados da Apex-Brasil  (ACP)">Assoc dos Empregados da Apex-Brasil  (ACP)</option>
+                            <option value="Assoc dos Servidores da Agência Brasileira de Inteligência  (ACP)">Assoc dos Servidores da Agência Brasileira de Inteligência  (ACP)</option>
+                            <option value="Assoc dos Servidores do Supremo Tribunal Federal  (ACP)">Assoc dos Servidores do Supremo Tribunal Federal  (ACP)</option>
+                            <option value="Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União  (ACP)">Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União  (ACP)</option>
+                            <option value="Assoc Nacional dos Analistas e Especialistas em Infraestrutura (ACP)">Assoc Nacional dos Analistas e Especialistas em Infraestrutura (ACP)</option>
+                            <option value="Assoc Nacional dos Defensores Públicos Federais (ACP)">Assoc Nacional dos Defensores Públicos Federais (ACP)</option>
+                            <option value="Assoc Nacional dos Peritos Criminais Federais  (ACP)">Assoc Nacional dos Peritos Criminais Federais  (ACP)</option>
+                            <option value="Assoc Nacional dos Procuradores Municipais  (ACP)">Assoc Nacional dos Procuradores Municipais  (ACP)</option>
+                            <option value="Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento (ACP)">Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento (ACP)</option>
+                            <option value="Assoc Nacional dos Serv do DNPM  (ACP)">Assoc Nacional dos Serv do DNPM  (ACP)</option>
+                            <option value="Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais (ACP)">Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais (ACP)</option>
+                            <option value="Assoc Renault (Colibri) (ACP)">Assoc Renault (Colibri) (ACP)</option>
+                            <option value="Bancários (ACP)">Bancários (ACP)</option>
+                            <option value="Banco do Brasil (ACP)">Banco do Brasil (ACP)</option>
+                            <option value="Bombeiros (ACP)">Bombeiros (ACP)</option>
+                            <option value="Caixa Econômica Federal  (ACP)">Caixa Econômica Federal  (ACP)</option>
+                            <option value="Callfarma (ACP)">Callfarma (ACP)</option>
+                            <option value="Clube Atlético Paranaense (ACP)">Clube Atlético Paranaense (ACP)</option>
+                            <option value="Clube Curitibano (ACP)">Clube Curitibano (ACP)</option>
+                            <option value="Clube Santa Mônica  (ACP)">Clube Santa Mônica  (ACP)</option>
+                            <option value="Electrolux (ACP)">Electrolux (ACP)</option>
+                            <option value="Empresas do Grupo J Malucelli (ACP)">Empresas do Grupo J Malucelli (ACP)</option>
+                            <option value="Federação Nacional dos Policiais Federais - FENAPF (ACP)">Federação Nacional dos Policiais Federais - FENAPF (ACP)</option>
+                            <option value="Leroy Merlin (ACP)">Leroy Merlin (ACP)</option>
+                            <option value="Ministério Público do Paraná (ACP)">Ministério Público do Paraná (ACP)</option>
+                            <option value="Mister Liber Brasil Corretora de Seguros  (ACP)">Mister Liber Brasil Corretora de Seguros  (ACP)</option>
+                            <option value="Paraná Clube (ACP)">Paraná Clube (ACP)</option>
+                            <option value="Petrobrás (ACP)">Petrobrás (ACP)</option>
+                            <option value="Polícia Civil  (ACP)">Polícia Civil  (ACP)</option>
+                            <option value="Polícia Federal (ACP)">Polícia Federal (ACP)</option>
+                            <option value="Polícia Militar (ACP)">Polícia Militar (ACP)</option>
+                            <option value="Policiais Rodoviários Federais (ACP)">Policiais Rodoviários Federais (ACP)</option>
+                            <option value="Sind dos Agentes de Atividades Penitenciárias  (ACP)">Sind dos Agentes de Atividades Penitenciárias  (ACP)</option>
+                            <option value="Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR (ACP)">Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR (ACP)</option>
+                            <option value="Sind dos Jornalistas  (ACP)">Sind dos Jornalistas  (ACP)</option>
+                            <option value="Sind dos Operadores de Transporte Escolar (ACP)">Sind dos Operadores de Transporte Escolar (ACP)</option>
+                            <option value="Sind Nac dos Analistas-Tributários da Receita Federal do Brasil  (ACP)">Sind Nac dos Analistas-Tributários da Receita Federal do Brasil  (ACP)</option>
+                            <option value="Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle  (ACP)">Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle  (ACP)</option>
+                            <option value="Sind Nac dos Serv das Agências Nacionais de Regulação (ACP)">Sind Nac dos Serv das Agências Nacionais de Regulação (ACP)</option>
+                            <option value="Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU  (ACP)">Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU  (ACP)</option>
+                            <option value="Sind Nac dos Serv do Ministério das Relações Exteriores (ACP)">Sind Nac dos Serv do Ministério das Relações Exteriores (ACP)</option>
+                            <option value="Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal  (ACP)">Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal  (ACP)</option>
+                            <option value="Sociedade Brasileira de Direito Médico e Bioética  (ACP)">Sociedade Brasileira de Direito Médico e Bioética  (ACP)</option>
+                            <option value="Wizard (ACP)">Wizard (ACP)</option>
+                            <option value="IBMP Instituto de Biologia Molecular do Paraná (ACP)">IBMP Instituto de Biologia Molecular do Paraná (ACP)</option>
+                            <option value="ASCREA-PR - Associação dos Servidores do CREA-PR (ACP)">ASCREA-PR - Associação dos Servidores do CREA-PR (ACP)</option>
+                            <option value="Copel Companhia Paranaense de Energia (ACP)">Copel Companhia Paranaense de Energia (ACP)</option>
+                            <option value="Gerdau Aços Longos S/A (ACP)">Gerdau Aços Longos S/A (ACP)</option>
+                            <option value="ACC - Associação Copel Curitiba (ACP)">ACC - Associação Copel Curitiba (ACP)</option>
+                            <option value="Branco Motores LTDA (ACP)">Branco Motores LTDA (ACP)</option>
+                            <option value="Escolinhas Parceiras (ACP)">Escolinhas Parceiras (ACP)</option>
+                            <option value="Loja França (ACP)">Loja França (ACP)</option>
+                            <option value="Quero Bolsa do Melhor Escola (ACP)">Quero Bolsa do Melhor Escola (ACP)</option>
+                            
+
+
+
+                            <!-- PArcerias CAAB - obtidas da planilha enviada pelo Eduardo em 24/05/2023 -->
+
+                            
+                            <option value="SINDFAZ (GERAL)">SINDFAZ</option>
+                            <option value="Coamo (GERAL)">Coamo</option>
+                            <option value="Grupo Boticário (GERAL)">Grupo Boticário</option>
+                            <option value="CAIXA dos Advogados do Paraná (GERAL)">CAIXA dos Advogados do Paraná</option>
+                            <option value="New Value (GERAL)">New Value</option>
+                            <option value="Sumitomo Rubber do Brasil (EAFRG)">Sumitomo Rubber do Brasil</option>
+                            <option value="Autopeças e Serviços Auto M (EAFRG)">Autopeças e Serviços Auto M</option>
+                            <option value="Grupo Leblon (EAFRG)">Grupo Leblon</option>
+                            <option value="Sanepar (CAPI)">Sanepar</option>
+                            <option value="Strokmatic (CAPI)">Strokmatic</option>
+                            <option value="ASEPI (CAPI)">ASEPI</option>
+                            <option value="Polícia Militar (CAPI)">Polícia Militar</option>
+                            <option value="Bombeiro (CAPI)">Bombeiro</option>
+                            <option value="Guarda Municipal (CAPI)">Guarda Municipal</option>
+                            <option value="Fisk (CAPI)">Fisk</option>
+                            <option value="Kumon (CAPI)">Kumon</option>
+                            <option value="Perkons S. A. (CAPI)">Perkons S. A.</option>
+                            <option value="Bony Plus (CAPI)">Bony Plus</option>
+                            <option value="SINSERP (CAPI)">SINSERP</option>
+                            <option value="BBS Brasil Formação de atletas (CAPI)">BBS Brasil Formação de atletas</option>
+                            <option value="Magius Metalúrgica Industrial (EAAP)">Magius Metalúrgica Industrial</option>
+                            <option value="Multilit (EAAP)">Multilit</option>
+                            <option value="OAB União da Vitória (EAUV)">OAB União da Vitória</option>
+                            <option value="Pomade (EAUV)">Pomade</option>
+                            <option value="Novacki (EAUV)">Novacki</option>
+                            <option value="Batalhão de Polícia Ambiental (CASJP)">Batalhão de Polícia Ambiental</option>
+                            <option value="Academia H2O (CASJP)">Academia H2O</option>
+                            <option value="Assinfra- Infraero (CASJP)">Assinfra- Infraero</option>
+                            <option value="Associação Colibri-Renault (CASJP)">Associação Colibri-Renault</option>
+                            <option value="P.H.D Academias (CAC)">P.H.D Academias</option>
+                            <option value="Coca Cola (CAC)">Coca Cola</option>
+                            <option value="Eletriza (CAC)">Eletriza</option>
+                            <option value="APCEF (CAC)">APCEF</option>
+                            <option value="Agro Factory Com. De Prod. Agropec. Ltda. (CCABR)">Agro Factory Com. De Prod. Agropec. Ltda.</option>
+                            <option value="Ases - Associação dos Servidores do SERPRO (CCABR)">Ases - Associação dos Servidores do SERPRO</option>
+                            <option value="Associação dos Delegados de Policia do Estado (CCABR)">Associação dos Delegados de Policia do Estado</option>
+                            <option value="Associação dos Lojistas do Shopping Mueller (CCABR)">Associação dos Lojistas do Shopping Mueller</option>
+                            <option value="Associação Lojistas do Shopping Italia (CCABR)">Associação Lojistas do Shopping Italia</option>
+                            <option value="Bristol Adm de Hoteis e cond (CCABR)">Bristol Adm de Hoteis e cond</option>
+                            <option value="CEABS serviços AS (CCABR)">CEABS serviços AS</option>
+                            <option value="CELEPAR/FUNCEL (CCABR)">CELEPAR/FUNCEL</option>
+                            <option value="Conselho Regional de Farmacia do Estado PR (CCABR)">Conselho Regional de Farmacia do Estado PR</option>
+                            <option value="Influx centro Civico (CCABR)">Influx centro Civico</option>
+                            <option value="Hospital Pilar (CCABR)">Hospital Pilar</option>
+                            <option value="Kumon (CCABR)">Kumon</option>
+                            <option value="Mobi Dick (CCABR)">Mobi Dick</option>
+                            <option value="OAB Parana (CCABR)">OAB Parana</option>
+                            <option value="Odontoklinic Clinica Odontologica (CCABR)">Odontoklinic Clinica Odontologica</option>
+                            <option value="Sindicato das Agencias de propaganda do PR (CCABR)">Sindicato das Agencias de propaganda do PR</option>
+                            <option value="Sindicato dos Bancarios de Curitiba (CCABR)">Sindicato dos Bancarios de Curitiba</option>
+                            <option value="Sindicato dos Policiais Rodoferroviarios (CCABR)">Sindicato dos Policiais Rodoferroviarios</option>
+                            <option value="KNN Idiomas Sitio Cercado (CAAB)">KNN Idiomas Sitio Cercado</option>
+                            <option value="Wizard Xaxim (CAAB)">Wizard Xaxim</option>
+                            <option value="APPA (Administração dos Portos de Paranaguá e Antonina) (CAPGUA)">APPA (Administração dos Portos de Paranaguá e Antonina)</option>
+                            <option value="Prefeitura Municipal de Paranaguá (CAPGUA)">Prefeitura Municipal de Paranaguá</option>
+                            <option value="Marinha do Brasil (Através da associação Abrigo ao marinheiro) (CAPGUA)">Marinha do Brasil (Através da associação Abrigo ao marinheiro)</option>
+                            <option value="Câmara Municipal de Paranaguá (CAPGUA)">Câmara Municipal de Paranaguá</option>
+                            <option value="Sindicato Bancários Paranaguá (CAPGUA)">Sindicato Bancários Paranaguá</option>
+                            <option value="Sintracoosul - sindicato dos trabalhadores cooperados- Sul do PR (CAPGUA)">Sintracoosul - sindicato dos trabalhadores cooperados- Sul do PR</option>
+                            <option value="Sindicato dos Taxistas de Paranaguá (CAPGUA)">Sindicato dos Taxistas de Paranaguá</option>
+
+
+
+
+                        </datalist>
+
+                        <!-- Desconto aluno 1 -->
+                        <input id="desconto1" style="width: 17.5%;" type="number" value="0" min="0" max="20" step="1" class="descIndiv" onchange="calculaMensalidade1()">
+                        
+                        <!-- Parcelas aluno 1 -->
+                        <select id="parcelas1" style="width: 17.5%;" class="parcelas" onchange="calculaMensalidade1()">
+                            
+                            <option value="12" selected>12x</option>
+                            <option value="11">11x</option>
+                            <option value="10">10x</option>
+                            <option value="9">9x</option>
+                            <option value="8">8x</option>
+                            <option value="7">7x</option>
+                            <option value="6">6x</option>
+                            <option value="5">5x</option>
+                            <option value="4">4x</option>
+                            <option value="3">3x</option>
+                            <option value="2">2x</option>
+                            <option value="1">1x</option>
+                        </select>
+
+                        <!-- Valor final aluno 1 -->
+                        <input id="valorFinal1" style="width: 25%; color: #0D6EFD;" type="text" name="valor" 
+                            class="form-control form-control-sm valor" readonly>
+
+                    </div>
+
+                    <!-- checkbox area 1-->
+                    <div class="divCheck">
+                        <!-- Laudo aluno1 -->
+                        <div>
+                            <label for="checkLaudo1">Laudo/Atendimento especial</label>
+                            <input type="checkbox" name="" id="checkLaudo1" onclick="temLaudo()">
+                        </div>
+                        <!-- Didáticos aluno1 -->
+                        <div class="div-didaticos">
+                            <label for="checkDidaticos1">Incluir Didáticos</label>
+                            <input type="checkbox" name="" id="checkDidaticos1" onclick="incluirDidaticos1()">
+                        </div>
+                        <!-- <div class="copiar">
+                            <img src="imagens/copy.png" alt="" onclick="copiarDados()">
+                        </div> -->
+                    </div>
+
+
+                </div>
+
+                <!-- ALUNO 02 -->
+                <div class="conteiner">
+                    <div class="sub-conteiner">
+                        
+                        <input id="txtNome2" style="width: 65%;" placeholder="Nome" type="text" class="form-control form-control-sm nome" 
+                            aria-describedby="emailHelp">           
+                        
+                        <select id="serie2" style="width: 35%;" class="form-control form-control-sm serie" onchange="calculaMensalidade2()">
+                            <option value="0.0">Série</option>
+                            <option value="1160">Inf. 3</option>
+                            <option value="1002.10">Inf. 4</option>
+                            <option value="1002.10">Inf. 5</option>
+                            <option value="1115">1º Fund.</option>
+                            <option value="1115">2º Fund.</option>
+                            <option value="1115">3º Fund.</option>
+                            <option value="1115">4º Fund.</option>
+                            <option value="1115">5º Fund.</option>
+                            <option value="1314">6º Fund.</option>
+                            <option value="1314">7º Fund.</option>
+                            <option value="1314">8º Fund.</option>
+                            <option value="1314">9º Fund.</option>
+                            <option value="1476.20">1º Méd.</option>
+                            <option value="1476.20">2º Méd.</option>
+                            <option value="1476.20">3º Méd.</option>
+                            <option value="830.30">Contraturno</option>
+                            
+                        </select>
+                        
+                        <input id="valorSerie2" style="width: 25%;" type="text" name="valor" 
+                        class="form-control form-control-sm valor valorIntegral" readonly>
+
+                    </div>
+                    
+                    <div class="sub-conteiner">
+                                    
+                        <input id="parceria2" style="width: 65%;" placeholder="Parceria" list="listParceiros2" 
+                            class="form-control form-control-sm parcerias" name="parcerias" onchange="calculaMensalidade2()">
+
+                            <!-- Escola de origem ou parcerias Aluno2 -->
+                        <datalist id="listParceiros2">
+                            <option value="Centro de Educação Infantil Érico Veríssimo"></option>
+                            <option value="Escola de Ensino Fundamental Rolândia"></option>
+                            <option value="Escola Ensino Fundamental Leonor Castellano">
+                            <option value="Escola Ensino Fundamental Professora Maria Augusta Jouve"></option>
+                            <option value="Essencial - Centro de Educação Infantil"></option>
+                            <option value="Reino das Ideias"></option>
+                            <option value="CEI Caminho Para o Futuro"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Centro de Educação Infantil Pequeno Mundo"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Escola de Educacional Infantil João de Barros"></option>
+                            <option value="ABC KIDS Berçário e Educação Infantil"></option>
+                            <option value="Escola Batista Shalon (Não aceita cartão presente)"></option>
+                            <option value="Centro de Educação Infantil Portinari"></option>
+                            <option value="Centro de Educação Infantil Davinci"></option>
+                            <option value="Centro de Educação Infantil Anjo Gabriel"></option>
+                            <option value="AAM do Brasil">AAM do Brasil </option>
+                            <option value="ASPP Associação dos Servidores Públicos do Paraná">ASPP  Associação dos Servidores Públicos do Paraná</option>
+                            <option value="Assoc Brasileira de Advogados">Assoc Brasileira de Advogados</option>
+                            <option value="Assoc de Servidores da Previdência Social">Assoc de Servidores da Previdência Social</option>
+                            <option value="Assoc dos Analistas de Comércio Exterior">Assoc dos Analistas de Comércio Exterior </option>
+                            <option value="Assoc dos Empregados da Apex-Brasil">Assoc dos Empregados da Apex-Brasil </option>
+                            <option value="Assoc dos Servidores da Agência Brasileira de Inteligência">Assoc dos Servidores da Agência Brasileira de Inteligência </option>
+                            <option value="Assoc dos Servidores do Supremo Tribunal Federal">Assoc dos Servidores do Supremo Tribunal Federal </option>
+                            <option value="Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União">Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União </option>
+                            <option value="Assoc Nacional dos Analistas e Especialistas em Infraestrutura">Assoc Nacional dos Analistas e Especialistas em Infraestrutura</option>
+                            <option value="Assoc Nacional dos Defensores Públicos Federais">Assoc Nacional dos Defensores Públicos Federais</option>
+                            <option value="Assoc Nacional dos Peritos Criminais Federais">Assoc Nacional dos Peritos Criminais Federais </option>
+                            <option value="Assoc Nacional dos Procuradores Municipais">Assoc Nacional dos Procuradores Municipais </option>
+                            <option value="Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento">Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento</option>
+                            <option value="Assoc Nacional dos Serv do DNPM">Assoc Nacional dos Serv do DNPM </option>
+                            <option value="Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais">Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais</option>
+                            <option value="Assoc Renault (Colibri)">Assoc Renault (Colibri)</option>
+                            <option value="Bancários">Bancários</option>
+                            <option value="Banco do Brasil">Banco do Brasil</option>
+                            <option value="Bombeiros">Bombeiros</option>
+                            <option value="Caixa Econômica Federal">Caixa Econômica Federal </option>
+                            <option value="Callfarma">Callfarma</option>
+                            <option value="Clube Atlético Paranaense">Clube Atlético Paranaense</option>
+                            <option value="Clube Curitibano">Clube Curitibano</option>
+                            <option value="Clube Santa Mônica">Clube Santa Mônica </option>
+                            <option value="Electrolux">Electrolux</option>
+                            <option value="Empresas do Grupo J Malucelli">Empresas do Grupo J Malucelli</option>
+                            <option value="Federação Nacional dos Policiais Federais - FENAPF">Federação Nacional dos Policiais Federais - FENAPF</option>
+                            <option value="Leroy Merlin">Leroy Merlin</option>
+                            <option value="Ministério Público do Paraná">Ministério Público do Paraná</option>
+                            <option value="Mister Liber Brasil Corretora de Seguros">Mister Liber Brasil Corretora de Seguros </option>
+                            <option value="Paraná Clube">Paraná Clube</option>
+                            <option value="Petrobrás">Petrobrás</option>
+                            <option value="Polícia Civil">Polícia Civil </option>
+                            <option value="Polícia Federal">Polícia Federal</option>
+                            <option value="Polícia Militar">Polícia Militar</option>
+                            <option value="Policiais Rodoviários Federais">Policiais Rodoviários Federais</option>
+                            <option value="Sind dos Agentes de Atividades Penitenciárias">Sind dos Agentes de Atividades Penitenciárias </option>
+                            <option value="Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR">Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR</option>
+                            <option value="Sind dos Jornalistas">Sind dos Jornalistas </option>
+                            <option value="Sind dos Operadores de Transporte Escolar">Sind dos Operadores de Transporte Escolar</option>
+                            <option value="Sind Nac dos Analistas-Tributários da Receita Federal do Brasil">Sind Nac dos Analistas-Tributários da Receita Federal do Brasil </option>
+                            <option value="Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle">Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle </option>
+                            <option value="Sind Nac dos Serv das Agências Nacionais de Regulação">Sind Nac dos Serv das Agências Nacionais de Regulação</option>
+                            <option value="Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU">Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU </option>
+                            <option value="Sind Nac dos Serv do Ministério das Relações Exteriores">Sind Nac dos Serv do Ministério das Relações Exteriores</option>
+                            <option value="Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal">Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal </option>
+                            <option value="Sociedade Brasileira de Direito Médico e Bioética">Sociedade Brasileira de Direito Médico e Bioética </option>
+                            <option value="Wizard">Wizard</option>
+                            <option value="IBMP Instituto de Biologia Molecular do Paraná">IBMP Instituto de Biologia Molecular do Paraná</option>
+                            <option value="ASCREA-PR - Associação dos Servidores do CREA-PR">ASCREA-PR - Associação dos Servidores do CREA-PR</option>
+                            <option value="Copel Companhia Paranaense de Energia">Copel Companhia Paranaense de Energia</option>
+                            <option value="Gerdau Aços Longos S/A">Gerdau Aços Longos S/A</option>
+                            <option value="ACC - Associação Copel Curitiba">ACC - Associação Copel Curitiba</option>
+                            <option value="Branco Motores LTDA">Branco Motores LTDA</option>
+                            <option value="Escolinhas Parceiras">Escolinhas Parceiras</option>
+                            <option value="Loja França">Loja França</option>
+                            <option value="Quero Bolsa do Melhor Escola">Quero Bolsa do Melhor Escola</option>
+                            <option value="ASSESA - União das Associações de Empregados da SANEPAR">ASSESA - União das Associações de Empregados da SANEPAR</option>
+
+                            <option value="AAM do Brasil (ACP)">AAM do Brasil  (ACP)</option>
+                            <option value="ASPP  Associação dos Servidores Públicos do Paraná (ACP)">ASPP  Associação dos Servidores Públicos do Paraná (ACP)</option>
+                            <option value="Assoc Brasileira de Advogados (ACP)">Assoc Brasileira de Advogados (ACP)</option>
+                            <option value="Assoc de Servidores da Previdência Social (ACP)">Assoc de Servidores da Previdência Social (ACP)</option>
+                            <option value="Assoc dos Analistas de Comércio Exterior  (ACP)">Assoc dos Analistas de Comércio Exterior  (ACP)</option>
+                            <option value="Assoc dos Empregados da Apex-Brasil  (ACP)">Assoc dos Empregados da Apex-Brasil  (ACP)</option>
+                            <option value="Assoc dos Servidores da Agência Brasileira de Inteligência  (ACP)">Assoc dos Servidores da Agência Brasileira de Inteligência  (ACP)</option>
+                            <option value="Assoc dos Servidores do Supremo Tribunal Federal  (ACP)">Assoc dos Servidores do Supremo Tribunal Federal  (ACP)</option>
+                            <option value="Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União  (ACP)">Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União  (ACP)</option>
+                            <option value="Assoc Nacional dos Analistas e Especialistas em Infraestrutura (ACP)">Assoc Nacional dos Analistas e Especialistas em Infraestrutura (ACP)</option>
+                            <option value="Assoc Nacional dos Defensores Públicos Federais (ACP)">Assoc Nacional dos Defensores Públicos Federais (ACP)</option>
+                            <option value="Assoc Nacional dos Peritos Criminais Federais  (ACP)">Assoc Nacional dos Peritos Criminais Federais  (ACP)</option>
+                            <option value="Assoc Nacional dos Procuradores Municipais  (ACP)">Assoc Nacional dos Procuradores Municipais  (ACP)</option>
+                            <option value="Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento (ACP)">Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento (ACP)</option>
+                            <option value="Assoc Nacional dos Serv do DNPM  (ACP)">Assoc Nacional dos Serv do DNPM  (ACP)</option>
+                            <option value="Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais (ACP)">Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais (ACP)</option>
+                            <option value="Assoc Renault (Colibri) (ACP)">Assoc Renault (Colibri) (ACP)</option>
+                            <option value="Bancários (ACP)">Bancários (ACP)</option>
+                            <option value="Banco do Brasil (ACP)">Banco do Brasil (ACP)</option>
+                            <option value="Bombeiros (ACP)">Bombeiros (ACP)</option>
+                            <option value="Caixa Econômica Federal  (ACP)">Caixa Econômica Federal  (ACP)</option>
+                            <option value="Callfarma (ACP)">Callfarma (ACP)</option>
+                            <option value="Clube Atlético Paranaense (ACP)">Clube Atlético Paranaense (ACP)</option>
+                            <option value="Clube Curitibano (ACP)">Clube Curitibano (ACP)</option>
+                            <option value="Clube Santa Mônica  (ACP)">Clube Santa Mônica  (ACP)</option>
+                            <option value="Electrolux (ACP)">Electrolux (ACP)</option>
+                            <option value="Empresas do Grupo J Malucelli (ACP)">Empresas do Grupo J Malucelli (ACP)</option>
+                            <option value="Federação Nacional dos Policiais Federais - FENAPF (ACP)">Federação Nacional dos Policiais Federais - FENAPF (ACP)</option>
+                            <option value="Leroy Merlin (ACP)">Leroy Merlin (ACP)</option>
+                            <option value="Ministério Público do Paraná (ACP)">Ministério Público do Paraná (ACP)</option>
+                            <option value="Mister Liber Brasil Corretora de Seguros  (ACP)">Mister Liber Brasil Corretora de Seguros  (ACP)</option>
+                            <option value="Paraná Clube (ACP)">Paraná Clube (ACP)</option>
+                            <option value="Petrobrás (ACP)">Petrobrás (ACP)</option>
+                            <option value="Polícia Civil  (ACP)">Polícia Civil  (ACP)</option>
+                            <option value="Polícia Federal (ACP)">Polícia Federal (ACP)</option>
+                            <option value="Polícia Militar (ACP)">Polícia Militar (ACP)</option>
+                            <option value="Policiais Rodoviários Federais (ACP)">Policiais Rodoviários Federais (ACP)</option>
+                            <option value="Sind dos Agentes de Atividades Penitenciárias  (ACP)">Sind dos Agentes de Atividades Penitenciárias  (ACP)</option>
+                            <option value="Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR (ACP)">Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR (ACP)</option>
+                            <option value="Sind dos Jornalistas  (ACP)">Sind dos Jornalistas  (ACP)</option>
+                            <option value="Sind dos Operadores de Transporte Escolar (ACP)">Sind dos Operadores de Transporte Escolar (ACP)</option>
+                            <option value="Sind Nac dos Analistas-Tributários da Receita Federal do Brasil  (ACP)">Sind Nac dos Analistas-Tributários da Receita Federal do Brasil  (ACP)</option>
+                            <option value="Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle  (ACP)">Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle  (ACP)</option>
+                            <option value="Sind Nac dos Serv das Agências Nacionais de Regulação (ACP)">Sind Nac dos Serv das Agências Nacionais de Regulação (ACP)</option>
+                            <option value="Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU  (ACP)">Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU  (ACP)</option>
+                            <option value="Sind Nac dos Serv do Ministério das Relações Exteriores (ACP)">Sind Nac dos Serv do Ministério das Relações Exteriores (ACP)</option>
+                            <option value="Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal  (ACP)">Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal  (ACP)</option>
+                            <option value="Sociedade Brasileira de Direito Médico e Bioética  (ACP)">Sociedade Brasileira de Direito Médico e Bioética  (ACP)</option>
+                            <option value="Wizard (ACP)">Wizard (ACP)</option>
+                            <option value="IBMP Instituto de Biologia Molecular do Paraná (ACP)">IBMP Instituto de Biologia Molecular do Paraná (ACP)</option>
+                            <option value="ASCREA-PR - Associação dos Servidores do CREA-PR (ACP)">ASCREA-PR - Associação dos Servidores do CREA-PR (ACP)</option>
+                            <option value="Copel Companhia Paranaense de Energia (ACP)">Copel Companhia Paranaense de Energia (ACP)</option>
+                            <option value="Gerdau Aços Longos S/A (ACP)">Gerdau Aços Longos S/A (ACP)</option>
+                            <option value="ACC - Associação Copel Curitiba (ACP)">ACC - Associação Copel Curitiba (ACP)</option>
+                            <option value="Branco Motores LTDA (ACP)">Branco Motores LTDA (ACP)</option>
+                            <option value="Escolinhas Parceiras (ACP)">Escolinhas Parceiras (ACP)</option>
+                            <option value="Loja França (ACP)">Loja França (ACP)</option>
+                            <option value="Quero Bolsa do Melhor Escola (ACP)">Quero Bolsa do Melhor Escola (ACP)</option>
+
+
+                            <!-- PArcerias CAAB - obtidas da planilha enviada pelo Eduardo em 24/05/2023 -->
+
+                            
+                            <option value="SINDFAZ (GERAL)">SINDFAZ</option>
+                            <option value="Coamo (GERAL)">Coamo</option>
+                            <option value="Grupo Boticário (GERAL)">Grupo Boticário</option>
+                            <option value="CAIXA dos Advogados do Paraná (GERAL)">CAIXA dos Advogados do Paraná</option>
+                            <option value="New Value (GERAL)">New Value</option>
+                            <option value="Sumitomo Rubber do Brasil (EAFRG)">Sumitomo Rubber do Brasil</option>
+                            <option value="Autopeças e Serviços Auto M (EAFRG)">Autopeças e Serviços Auto M</option>
+                            <option value="Grupo Leblon (EAFRG)">Grupo Leblon</option>
+                            <option value="Sanepar (CAPI)">Sanepar</option>
+                            <option value="Strokmatic (CAPI)">Strokmatic</option>
+                            <option value="ASEPI (CAPI)">ASEPI</option>
+                            <option value="Polícia Militar (CAPI)">Polícia Militar</option>
+                            <option value="Bombeiro (CAPI)">Bombeiro</option>
+                            <option value="Guarda Municipal (CAPI)">Guarda Municipal</option>
+                            <option value="Fisk (CAPI)">Fisk</option>
+                            <option value="Kumon (CAPI)">Kumon</option>
+                            <option value="Perkons S. A. (CAPI)">Perkons S. A.</option>
+                            <option value="Bony Plus (CAPI)">Bony Plus</option>
+                            <option value="SINSERP (CAPI)">SINSERP</option>
+                            <option value="BBS Brasil Formação de atletas (CAPI)">BBS Brasil Formação de atletas</option>
+                            <option value="Magius Metalúrgica Industrial (EAAP)">Magius Metalúrgica Industrial</option>
+                            <option value="Multilit (EAAP)">Multilit</option>
+                            <option value="OAB União da Vitória (EAUV)">OAB União da Vitória</option>
+                            <option value="Pomade (EAUV)">Pomade</option>
+                            <option value="Novacki (EAUV)">Novacki</option>
+                            <option value="Batalhão de Polícia Ambiental (CASJP)">Batalhão de Polícia Ambiental</option>
+                            <option value="Academia H2O (CASJP)">Academia H2O</option>
+                            <option value="Assinfra- Infraero (CASJP)">Assinfra- Infraero</option>
+                            <option value="Associação Colibri-Renault (CASJP)">Associação Colibri-Renault</option>
+                            <option value="P.H.D Academias (CAC)">P.H.D Academias</option>
+                            <option value="Coca Cola (CAC)">Coca Cola</option>
+                            <option value="Eletriza (CAC)">Eletriza</option>
+                            <option value="APCEF (CAC)">APCEF</option>
+                            <option value="Agro Factory Com. De Prod. Agropec. Ltda. (CCABR)">Agro Factory Com. De Prod. Agropec. Ltda.</option>
+                            <option value="Ases - Associação dos Servidores do SERPRO (CCABR)">Ases - Associação dos Servidores do SERPRO</option>
+                            <option value="Associação dos Delegados de Policia do Estado (CCABR)">Associação dos Delegados de Policia do Estado</option>
+                            <option value="Associação dos Lojistas do Shopping Mueller (CCABR)">Associação dos Lojistas do Shopping Mueller</option>
+                            <option value="Associação Lojistas do Shopping Italia (CCABR)">Associação Lojistas do Shopping Italia</option>
+                            <option value="Bristol Adm de Hoteis e cond (CCABR)">Bristol Adm de Hoteis e cond</option>
+                            <option value="CEABS serviços AS (CCABR)">CEABS serviços AS</option>
+                            <option value="CELEPAR/FUNCEL (CCABR)">CELEPAR/FUNCEL</option>
+                            <option value="Conselho Regional de Farmacia do Estado PR (CCABR)">Conselho Regional de Farmacia do Estado PR</option>
+                            <option value="Influx centro Civico (CCABR)">Influx centro Civico</option>
+                            <option value="Hospital Pilar (CCABR)">Hospital Pilar</option>
+                            <option value="Kumon (CCABR)">Kumon</option>
+                            <option value="Mobi Dick (CCABR)">Mobi Dick</option>
+                            <option value="OAB Parana (CCABR)">OAB Parana</option>
+                            <option value="Odontoklinic Clinica Odontologica (CCABR)">Odontoklinic Clinica Odontologica</option>
+                            <option value="Sindicato das Agencias de propaganda do PR (CCABR)">Sindicato das Agencias de propaganda do PR</option>
+                            <option value="Sindicato dos Bancarios de Curitiba (CCABR)">Sindicato dos Bancarios de Curitiba</option>
+                            <option value="Sindicato dos Policiais Rodoferroviarios (CCABR)">Sindicato dos Policiais Rodoferroviarios</option>
+                            <option value="KNN Idiomas Sitio Cercado (CAAB)">KNN Idiomas Sitio Cercado</option>
+                            <option value="Wizard Xaxim (CAAB)">Wizard Xaxim</option>
+                            <option value="APPA (Administração dos Portos de Paranaguá e Antonina) (CAPGUA)">APPA (Administração dos Portos de Paranaguá e Antonina)</option>
+                            <option value="Prefeitura Municipal de Paranaguá (CAPGUA)">Prefeitura Municipal de Paranaguá</option>
+                            <option value="Marinha do Brasil (Através da associação Abrigo ao marinheiro) (CAPGUA)">Marinha do Brasil (Através da associação Abrigo ao marinheiro)</option>
+                            <option value="Câmara Municipal de Paranaguá (CAPGUA)">Câmara Municipal de Paranaguá</option>
+                            <option value="Sindicato Bancários Paranaguá (CAPGUA)">Sindicato Bancários Paranaguá</option>
+                            <option value="Sintracoosul - sindicato dos trabalhadores cooperados- Sul do PR (CAPGUA)">Sintracoosul - sindicato dos trabalhadores cooperados- Sul do PR</option>
+                            <option value="Sindicato dos Taxistas de Paranaguá (CAPGUA)">Sindicato dos Taxistas de Paranaguá</option>
+                        </datalist>
+
+                        <input id="desconto2" style="width: 17.5%;" type="number" value="0" min="0" max="20" step="1" class="descIndiv" 
+                            onchange="calculaMensalidade2()">
+                        
+                        <select id="parcelas2" style="width: 17.5%;" class="parcelas" onchange="calculaMensalidade2()">
+                            
+                            <option value="12" selected>12x</option>
+                            <option value="11">11x</option>
+                            <option value="10">10x</option>
+                            <option value="9">9x</option>
+                            <option value="8">8x</option>
+                            <option value="7">7x</option>
+                            <option value="6">6x</option>
+                            <option value="5">5x</option>
+                            <option value="4">4x</option>
+                            <option value="3">3x</option>
+                            <option value="2">2x</option>
+                            <option value="1">1x</option>
+                        </select>
+
+                        <input id="valorFinal2" style="width: 25%; color: #0D6EFD;" type="text" name="valor" 
+                            class="form-control form-control-sm valor">
+                    </div>
+
+                    <!-- Checkbox area2 -->
+                    <div class="divCheck">
+                        <!-- Laudo aluno2 -->
+                        <div>
+                            <label for="checkLaudo2">Laudo/Atendimento especial</label>
+                            <input type="checkbox" name="" id="checkLaudo2" onclick="temLaudo2()">
+                        </div>
+                        <!-- Didáticos aluno2 -->
+                        <div class="div-didaticos">
+                            <label for="checkDidaticos2">Incluir didáticos</label>
+                            <input type="checkbox" name="" id="checkDidaticos2" onclick="incluirDidaticos2()">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ALUNO 03 -->
+                <div class="conteiner">
+                    <div class="sub-conteiner">
+                        <input style="width: 65%;" placeholder="Nome" type="text" class="form-control form-control-sm nome" id="txtNome3"
+                            aria-describedby="emailHelp">            
+                        
+                        <select id="serie3" style="width: 35%;" class="form-control form-control-sm serie" onchange="calculaMensalidade3()">
+                            <option value="0.0">Série</option>
+                            <option value="1160">Inf. 3</option>
+                            <option value="1002.10">Inf. 4</option>
+                            <option value="1002.10">Inf. 5</option>
+                            <option value="1115">1º Fund.</option>
+                            <option value="1115">2º Fund.</option>
+                            <option value="1115">3º Fund.</option>
+                            <option value="1115">4º Fund.</option>
+                            <option value="1115">5º Fund.</option>
+                            <option value="1314">6º Fund.</option>
+                            <option value="1314">7º Fund.</option>
+                            <option value="1314">8º Fund.</option>
+                            <option value="1314">9º Fund.</option>
+                            <option value="1476.20">1º Méd.</option>
+                            <option value="1476.20">2º Méd.</option>
+                            <option value="1476.20">3º Méd.</option>
+                            <option value="830.30">Contraturno</option>
+                            
+                        </select>
+
+                        <input id="valorSerie3" style="width: 25%;" type="text" name="valor" 
+                            class="form-control form-control-sm valor valorIntegral" readonly>
+                    </div>       
+
+                    <div class="sub-conteiner">            
+                        
+                        <input id="parceria3" style="width: 65%;" placeholder="Parceria" list="listaParceiros3" 
+                            class="form-control form-control-sm parcerias" name="parcerias" onchange="calculaMensalidade3()">
+
+                            <datalist id="listaParceiros3">
+                                <option value="Centro de Educação Infantil Érico Veríssimo"></option>
+                            <option value="Escola de Ensino Fundamental Rolândia"></option>
+                            <option value="Escola Ensino Fundamental Leonor Castellano">
+                            <option value="Escola Ensino Fundamental Professora Maria Augusta Jouve"></option>
+                            <option value="Essencial - Centro de Educação Infantil"></option>
+                            <option value="Reino das Ideias"></option>
+                            <option value="CEI Caminho Para o Futuro"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Centro de Educação Infantil Pequeno Mundo"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Escola de Educacional Infantil João de Barros"></option>
+                            <option value="ABC KIDS Berçário e Educação Infantil"></option>
+                            <option value="Escola Batista Shalon (Não aceita cartão presente)"></option>
+                            <option value="Centro de Educação Infantil Portinari"></option>
+                            <option value="Centro de Educação Infantil Davinci"></option>
+                            <option value="Centro de Educação Infantil Anjo Gabriel"></option>
+                            <option value="AAM do Brasil">AAM do Brasil </option>
+                            <option value="ASPP Associação dos Servidores Públicos do Paraná">ASPP  Associação dos Servidores Públicos do Paraná</option>
+                            <option value="Assoc Brasileira de Advogados">Assoc Brasileira de Advogados</option>
+                            <option value="Assoc de Servidores da Previdência Social">Assoc de Servidores da Previdência Social</option>
+                            <option value="Assoc dos Analistas de Comércio Exterior">Assoc dos Analistas de Comércio Exterior </option>
+                            <option value="Assoc dos Empregados da Apex-Brasil">Assoc dos Empregados da Apex-Brasil </option>
+                            <option value="Assoc dos Servidores da Agência Brasileira de Inteligência">Assoc dos Servidores da Agência Brasileira de Inteligência </option>
+                            <option value="Assoc dos Servidores do Supremo Tribunal Federal">Assoc dos Servidores do Supremo Tribunal Federal </option>
+                            <option value="Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União">Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União </option>
+                            <option value="Assoc Nacional dos Analistas e Especialistas em Infraestrutura">Assoc Nacional dos Analistas e Especialistas em Infraestrutura</option>
+                            <option value="Assoc Nacional dos Defensores Públicos Federais">Assoc Nacional dos Defensores Públicos Federais</option>
+                            <option value="Assoc Nacional dos Peritos Criminais Federais">Assoc Nacional dos Peritos Criminais Federais </option>
+                            <option value="Assoc Nacional dos Procuradores Municipais">Assoc Nacional dos Procuradores Municipais </option>
+                            <option value="Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento">Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento</option>
+                            <option value="Assoc Nacional dos Serv do DNPM">Assoc Nacional dos Serv do DNPM </option>
+                            <option value="Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais">Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais</option>
+                            <option value="Assoc Renault (Colibri)">Assoc Renault (Colibri)</option>
+                            <option value="Bancários">Bancários</option>
+                            <option value="Banco do Brasil">Banco do Brasil</option>
+                            <option value="Bombeiros">Bombeiros</option>
+                            <option value="Caixa Econômica Federal">Caixa Econômica Federal </option>
+                            <option value="Callfarma">Callfarma</option>
+                            <option value="Clube Atlético Paranaense">Clube Atlético Paranaense</option>
+                            <option value="Clube Curitibano">Clube Curitibano</option>
+                            <option value="Clube Santa Mônica">Clube Santa Mônica </option>
+                            <option value="Electrolux">Electrolux</option>
+                            <option value="Empresas do Grupo J Malucelli">Empresas do Grupo J Malucelli</option>
+                            <option value="Federação Nacional dos Policiais Federais - FENAPF">Federação Nacional dos Policiais Federais - FENAPF</option>
+                            <option value="Leroy Merlin">Leroy Merlin</option>
+                            <option value="Ministério Público do Paraná">Ministério Público do Paraná</option>
+                            <option value="Mister Liber Brasil Corretora de Seguros">Mister Liber Brasil Corretora de Seguros </option>
+                            <option value="Paraná Clube">Paraná Clube</option>
+                            <option value="Petrobrás">Petrobrás</option>
+                            <option value="Polícia Civil">Polícia Civil </option>
+                            <option value="Polícia Federal">Polícia Federal</option>
+                            <option value="Polícia Militar">Polícia Militar</option>
+                            <option value="Policiais Rodoviários Federais">Policiais Rodoviários Federais</option>
+                            <option value="Sind dos Agentes de Atividades Penitenciárias">Sind dos Agentes de Atividades Penitenciárias </option>
+                            <option value="Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR">Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR</option>
+                            <option value="Sind dos Jornalistas">Sind dos Jornalistas </option>
+                            <option value="Sind dos Operadores de Transporte Escolar">Sind dos Operadores de Transporte Escolar</option>
+                            <option value="Sind Nac dos Analistas-Tributários da Receita Federal do Brasil">Sind Nac dos Analistas-Tributários da Receita Federal do Brasil </option>
+                            <option value="Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle">Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle </option>
+                            <option value="Sind Nac dos Serv das Agências Nacionais de Regulação">Sind Nac dos Serv das Agências Nacionais de Regulação</option>
+                            <option value="Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU">Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU </option>
+                            <option value="Sind Nac dos Serv do Ministério das Relações Exteriores">Sind Nac dos Serv do Ministério das Relações Exteriores</option>
+                            <option value="Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal">Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal </option>
+                            <option value="Sociedade Brasileira de Direito Médico e Bioética">Sociedade Brasileira de Direito Médico e Bioética </option>
+                            <option value="Wizard">Wizard</option>
+                            <option value="IBMP Instituto de Biologia Molecular do Paraná">IBMP Instituto de Biologia Molecular do Paraná</option>
+                            <option value="ASCREA-PR - Associação dos Servidores do CREA-PR">ASCREA-PR - Associação dos Servidores do CREA-PR</option>
+                            <option value="Copel Companhia Paranaense de Energia">Copel Companhia Paranaense de Energia</option>
+                            <option value="Gerdau Aços Longos S/A">Gerdau Aços Longos S/A</option>
+                            <option value="ACC - Associação Copel Curitiba">ACC - Associação Copel Curitiba</option>
+                            <option value="Branco Motores LTDA">Branco Motores LTDA</option>
+                            <option value="Escolinhas Parceiras">Escolinhas Parceiras</option>
+                            <option value="Loja França">Loja França</option>
+                            <option value="Quero Bolsa do Melhor Escola">Quero Bolsa do Melhor Escola</option>
+                            <option value="ASSESA - União das Associações de Empregados da SANEPAR">ASSESA - União das Associações de Empregados da SANEPAR</option>
+
+
+                            <option value="AAM do Brasil (ACP)">AAM do Brasil  (ACP)</option>
+                            <option value="ASPP  Associação dos Servidores Públicos do Paraná (ACP)">ASPP  Associação dos Servidores Públicos do Paraná (ACP)</option>
+                            <option value="Assoc Brasileira de Advogados (ACP)">Assoc Brasileira de Advogados (ACP)</option>
+                            <option value="Assoc de Servidores da Previdência Social (ACP)">Assoc de Servidores da Previdência Social (ACP)</option>
+                            <option value="Assoc dos Analistas de Comércio Exterior  (ACP)">Assoc dos Analistas de Comércio Exterior  (ACP)</option>
+                            <option value="Assoc dos Empregados da Apex-Brasil  (ACP)">Assoc dos Empregados da Apex-Brasil  (ACP)</option>
+                            <option value="Assoc dos Servidores da Agência Brasileira de Inteligência  (ACP)">Assoc dos Servidores da Agência Brasileira de Inteligência  (ACP)</option>
+                            <option value="Assoc dos Servidores do Supremo Tribunal Federal  (ACP)">Assoc dos Servidores do Supremo Tribunal Federal  (ACP)</option>
+                            <option value="Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União  (ACP)">Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União  (ACP)</option>
+                            <option value="Assoc Nacional dos Analistas e Especialistas em Infraestrutura (ACP)">Assoc Nacional dos Analistas e Especialistas em Infraestrutura (ACP)</option>
+                            <option value="Assoc Nacional dos Defensores Públicos Federais (ACP)">Assoc Nacional dos Defensores Públicos Federais (ACP)</option>
+                            <option value="Assoc Nacional dos Peritos Criminais Federais  (ACP)">Assoc Nacional dos Peritos Criminais Federais  (ACP)</option>
+                            <option value="Assoc Nacional dos Procuradores Municipais  (ACP)">Assoc Nacional dos Procuradores Municipais  (ACP)</option>
+                            <option value="Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento (ACP)">Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento (ACP)</option>
+                            <option value="Assoc Nacional dos Serv do DNPM  (ACP)">Assoc Nacional dos Serv do DNPM  (ACP)</option>
+                            <option value="Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais (ACP)">Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais (ACP)</option>
+                            <option value="Assoc Renault (Colibri) (ACP)">Assoc Renault (Colibri) (ACP)</option>
+                            <option value="Bancários (ACP)">Bancários (ACP)</option>
+                            <option value="Banco do Brasil (ACP)">Banco do Brasil (ACP)</option>
+                            <option value="Bombeiros (ACP)">Bombeiros (ACP)</option>
+                            <option value="Caixa Econômica Federal  (ACP)">Caixa Econômica Federal  (ACP)</option>
+                            <option value="Callfarma (ACP)">Callfarma (ACP)</option>
+                            <option value="Clube Atlético Paranaense (ACP)">Clube Atlético Paranaense (ACP)</option>
+                            <option value="Clube Curitibano (ACP)">Clube Curitibano (ACP)</option>
+                            <option value="Clube Santa Mônica  (ACP)">Clube Santa Mônica  (ACP)</option>
+                            <option value="Electrolux (ACP)">Electrolux (ACP)</option>
+                            <option value="Empresas do Grupo J Malucelli (ACP)">Empresas do Grupo J Malucelli (ACP)</option>
+                            <option value="Federação Nacional dos Policiais Federais - FENAPF (ACP)">Federação Nacional dos Policiais Federais - FENAPF (ACP)</option>
+                            <option value="Leroy Merlin (ACP)">Leroy Merlin (ACP)</option>
+                            <option value="Ministério Público do Paraná (ACP)">Ministério Público do Paraná (ACP)</option>
+                            <option value="Mister Liber Brasil Corretora de Seguros  (ACP)">Mister Liber Brasil Corretora de Seguros  (ACP)</option>
+                            <option value="Paraná Clube (ACP)">Paraná Clube (ACP)</option>
+                            <option value="Petrobrás (ACP)">Petrobrás (ACP)</option>
+                            <option value="Polícia Civil  (ACP)">Polícia Civil  (ACP)</option>
+                            <option value="Polícia Federal (ACP)">Polícia Federal (ACP)</option>
+                            <option value="Polícia Militar (ACP)">Polícia Militar (ACP)</option>
+                            <option value="Policiais Rodoviários Federais (ACP)">Policiais Rodoviários Federais (ACP)</option>
+                            <option value="Sind dos Agentes de Atividades Penitenciárias  (ACP)">Sind dos Agentes de Atividades Penitenciárias  (ACP)</option>
+                            <option value="Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR (ACP)">Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR (ACP)</option>
+                            <option value="Sind dos Jornalistas  (ACP)">Sind dos Jornalistas  (ACP)</option>
+                            <option value="Sind dos Operadores de Transporte Escolar (ACP)">Sind dos Operadores de Transporte Escolar (ACP)</option>
+                            <option value="Sind Nac dos Analistas-Tributários da Receita Federal do Brasil  (ACP)">Sind Nac dos Analistas-Tributários da Receita Federal do Brasil  (ACP)</option>
+                            <option value="Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle  (ACP)">Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle  (ACP)</option>
+                            <option value="Sind Nac dos Serv das Agências Nacionais de Regulação (ACP)">Sind Nac dos Serv das Agências Nacionais de Regulação (ACP)</option>
+                            <option value="Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU  (ACP)">Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU  (ACP)</option>
+                            <option value="Sind Nac dos Serv do Ministério das Relações Exteriores (ACP)">Sind Nac dos Serv do Ministério das Relações Exteriores (ACP)</option>
+                            <option value="Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal  (ACP)">Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal  (ACP)</option>
+                            <option value="Sociedade Brasileira de Direito Médico e Bioética  (ACP)">Sociedade Brasileira de Direito Médico e Bioética  (ACP)</option>
+                            <option value="Wizard (ACP)">Wizard (ACP)</option>
+                            <option value="IBMP Instituto de Biologia Molecular do Paraná (ACP)">IBMP Instituto de Biologia Molecular do Paraná (ACP)</option>
+                            <option value="ASCREA-PR - Associação dos Servidores do CREA-PR (ACP)">ASCREA-PR - Associação dos Servidores do CREA-PR (ACP)</option>
+                            <option value="Copel Companhia Paranaense de Energia (ACP)">Copel Companhia Paranaense de Energia (ACP)</option>
+                            <option value="Gerdau Aços Longos S/A (ACP)">Gerdau Aços Longos S/A (ACP)</option>
+                            <option value="ACC - Associação Copel Curitiba (ACP)">ACC - Associação Copel Curitiba (ACP)</option>
+                            <option value="Branco Motores LTDA (ACP)">Branco Motores LTDA (ACP)</option>
+                            <option value="Escolinhas Parceiras (ACP)">Escolinhas Parceiras (ACP)</option>
+                            <option value="Loja França (ACP)">Loja França (ACP)</option>
+                            <option value="Quero Bolsa do Melhor Escola (ACP)">Quero Bolsa do Melhor Escola (ACP)</option>
+                            
+                        <!-- PArcerias CAAB - obtidas da planilha enviada pelo Eduardo em 24/05/2023 -->
+
+                            
+                        <option value="SINDFAZ (GERAL)">SINDFAZ</option>
+                        <option value="Coamo (GERAL)">Coamo</option>
+                        <option value="Grupo Boticário (GERAL)">Grupo Boticário</option>
+                        <option value="CAIXA dos Advogados do Paraná (GERAL)">CAIXA dos Advogados do Paraná</option>
+                        <option value="New Value (GERAL)">New Value</option>
+                        <option value="Sumitomo Rubber do Brasil (EAFRG)">Sumitomo Rubber do Brasil</option>
+                        <option value="Autopeças e Serviços Auto M (EAFRG)">Autopeças e Serviços Auto M</option>
+                        <option value="Grupo Leblon (EAFRG)">Grupo Leblon</option>
+                        <option value="Sanepar (CAPI)">Sanepar</option>
+                        <option value="Strokmatic (CAPI)">Strokmatic</option>
+                        <option value="ASEPI (CAPI)">ASEPI</option>
+                        <option value="Polícia Militar (CAPI)">Polícia Militar</option>
+                        <option value="Bombeiro (CAPI)">Bombeiro</option>
+                        <option value="Guarda Municipal (CAPI)">Guarda Municipal</option>
+                        <option value="Fisk (CAPI)">Fisk</option>
+                        <option value="Kumon (CAPI)">Kumon</option>
+                        <option value="Perkons S. A. (CAPI)">Perkons S. A.</option>
+                        <option value="Bony Plus (CAPI)">Bony Plus</option>
+                        <option value="SINSERP (CAPI)">SINSERP</option>
+                        <option value="BBS Brasil Formação de atletas (CAPI)">BBS Brasil Formação de atletas</option>
+                        <option value="Magius Metalúrgica Industrial (EAAP)">Magius Metalúrgica Industrial</option>
+                        <option value="Multilit (EAAP)">Multilit</option>
+                        <option value="OAB União da Vitória (EAUV)">OAB União da Vitória</option>
+                        <option value="Pomade (EAUV)">Pomade</option>
+                        <option value="Novacki (EAUV)">Novacki</option>
+                        <option value="Batalhão de Polícia Ambiental (CASJP)">Batalhão de Polícia Ambiental</option>
+                        <option value="Academia H2O (CASJP)">Academia H2O</option>
+                        <option value="Assinfra- Infraero (CASJP)">Assinfra- Infraero</option>
+                        <option value="Associação Colibri-Renault (CASJP)">Associação Colibri-Renault</option>
+                        <option value="P.H.D Academias (CAC)">P.H.D Academias</option>
+                        <option value="Coca Cola (CAC)">Coca Cola</option>
+                        <option value="Eletriza (CAC)">Eletriza</option>
+                        <option value="APCEF (CAC)">APCEF</option>
+                        <option value="Agro Factory Com. De Prod. Agropec. Ltda. (CCABR)">Agro Factory Com. De Prod. Agropec. Ltda.</option>
+                        <option value="Ases - Associação dos Servidores do SERPRO (CCABR)">Ases - Associação dos Servidores do SERPRO</option>
+                        <option value="Associação dos Delegados de Policia do Estado (CCABR)">Associação dos Delegados de Policia do Estado</option>
+                        <option value="Associação dos Lojistas do Shopping Mueller (CCABR)">Associação dos Lojistas do Shopping Mueller</option>
+                        <option value="Associação Lojistas do Shopping Italia (CCABR)">Associação Lojistas do Shopping Italia</option>
+                        <option value="Bristol Adm de Hoteis e cond (CCABR)">Bristol Adm de Hoteis e cond</option>
+                        <option value="CEABS serviços AS (CCABR)">CEABS serviços AS</option>
+                        <option value="CELEPAR/FUNCEL (CCABR)">CELEPAR/FUNCEL</option>
+                        <option value="Conselho Regional de Farmacia do Estado PR (CCABR)">Conselho Regional de Farmacia do Estado PR</option>
+                        <option value="Influx centro Civico (CCABR)">Influx centro Civico</option>
+                        <option value="Hospital Pilar (CCABR)">Hospital Pilar</option>
+                        <option value="Kumon (CCABR)">Kumon</option>
+                        <option value="Mobi Dick (CCABR)">Mobi Dick</option>
+                        <option value="OAB Parana (CCABR)">OAB Parana</option>
+                        <option value="Odontoklinic Clinica Odontologica (CCABR)">Odontoklinic Clinica Odontologica</option>
+                        <option value="Sindicato das Agencias de propaganda do PR (CCABR)">Sindicato das Agencias de propaganda do PR</option>
+                        <option value="Sindicato dos Bancarios de Curitiba (CCABR)">Sindicato dos Bancarios de Curitiba</option>
+                        <option value="Sindicato dos Policiais Rodoferroviarios (CCABR)">Sindicato dos Policiais Rodoferroviarios</option>
+                        <option value="KNN Idiomas Sitio Cercado (CAAB)">KNN Idiomas Sitio Cercado</option>
+                        <option value="Wizard Xaxim (CAAB)">Wizard Xaxim</option>
+                        <option value="APPA (Administração dos Portos de Paranaguá e Antonina) (CAPGUA)">APPA (Administração dos Portos de Paranaguá e Antonina)</option>
+                        <option value="Prefeitura Municipal de Paranaguá (CAPGUA)">Prefeitura Municipal de Paranaguá</option>
+                        <option value="Marinha do Brasil (Através da associação Abrigo ao marinheiro) (CAPGUA)">Marinha do Brasil (Através da associação Abrigo ao marinheiro)</option>
+                        <option value="Câmara Municipal de Paranaguá (CAPGUA)">Câmara Municipal de Paranaguá</option>
+                        <option value="Sindicato Bancários Paranaguá (CAPGUA)">Sindicato Bancários Paranaguá</option>
+                        <option value="Sintracoosul - sindicato dos trabalhadores cooperados- Sul do PR (CAPGUA)">Sintracoosul - sindicato dos trabalhadores cooperados- Sul do PR</option>
+                        <option value="Sindicato dos Taxistas de Paranaguá (CAPGUA)">Sindicato dos Taxistas de Paranaguá</option>
+                        
+                        
+                        
+                        </datalist>
+
+
+                        <input id="desconto3" style="width: 17.5%;" type="number" value="0" min="0" max="20" step="1" 
+                            class="descIndiv" onchange="calculaMensalidade3()">
+
+                        <select id="parcelas3" style="width: 17.5%;" class="parcelas" onchange="calculaMensalidade3()">
+                            
+                            <option value="12" selected>12x</option>
+                            <option value="11">11x</option>
+                            <option value="10">10x</option>
+                            <option value="9">9x</option>
+                            <option value="8">8x</option>
+                            <option value="7">7x</option>
+                            <option value="6">6x</option>
+                            <option value="5">5x</option>
+                            <option value="4">4x</option>
+                            <option value="3">3x</option>
+                            <option value="2">2x</option>
+                            <option value="1">1x</option>
+                        </select>
+                        
+                        <input id="valorFinal3" style="width: 25%; color: #0D6EFD;" type="text" name="valor" 
+                            class="form-control form-control-sm valor" readonly>
+                    </div>
+
+                    <!-- Checkbox area3 -->
+                    <div class="divCheck">
+                        <div>
+                            <label for="checkLaudo3">Laudo/Atendimento especial</label>
+                            <input type="checkbox" name="" id="checkLaudo3" onclick="temLaudo3()">
+                        </div>
+                        <div class="div-didaticos">
+                            <label for="checkDidaticos3">Incluir Didáticos</label>
+                            <input type="checkbox" name="" id="checkDidaticos3" onclick="incluirDidaticos3()">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ALUNO 04 -->
+                <div class="conteiner">
+                    <div class="sub-conteiner">
+
+                        <input id="txtNome4" style="width: 65%;" placeholder="Nome" type="text" 
+                            class="form-control form-control-sm nome" aria-describedby="emailHelp">    
+                        
+                        <select id="serie4" style="width: 35%;" class="form-control form-control-sm serie" onchange="calculaMensalidade4()">
+                            <option value="0.0">Série</option>
+                            <option value="1160">Inf. 3</option>
+                            <option value="1002.10">Inf. 4</option>
+                            <option value="1002.10">Inf. 5</option>
+                            <option value="1115">1º Fund.</option>
+                            <option value="1115">2º Fund.</option>
+                            <option value="1115">3º Fund.</option>
+                            <option value="1115">4º Fund.</option>
+                            <option value="1115">5º Fund.</option>
+                            <option value="1314">6º Fund.</option>
+                            <option value="1314">7º Fund.</option>
+                            <option value="1314">8º Fund.</option>
+                            <option value="1314">9º Fund.</option>
+                            <option value="1476.20">1º Méd.</option>
+                            <option value="1476.20">2º Méd.</option>
+                            <option value="1476.20">3º Méd.</option>
+                            <option value="830.30">Contraturno</option>
+                            
+                        </select>
+
+                        <input id="valorSerie4" style="width: 25%;" type="text" name="valor" 
+                            class="form-control form-control-sm valor valorIntegral" readonly>
+                    </div>    
+
+                    <div class="sub-conteiner">           
+                        <input id="parceria4" style="width: 65%;" placeholder="Parceria" list="listaParceiros4" 
+                            class="form-control form-control-sm parcerias" name="parcerias" onchange="calculaMensalidade4()">
+
+                        <datalist id="listaParceiros4">
+                            <option value="Centro de Educação Infantil Érico Veríssimo"></option>
+                            <option value="Escola de Ensino Fundamental Rolândia"></option>
+                            <option value="Escola Ensino Fundamental Leonor Castellano">
+                            <option value="Escola Ensino Fundamental Professora Maria Augusta Jouve"></option>
+                            <option value="Essencial - Centro de Educação Infantil"></option>
+                            <option value="Reino das Ideias"></option>
+                            <option value="CEI Caminho Para o Futuro"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Centro de Educação Infantil Pequeno Mundo"></option>
+                            <option value="Pequenos Corações - Centro de Educação Infantil"></option>
+                            <option value="Escola de Educacional Infantil João de Barros"></option>
+                            <option value="ABC KIDS Berçário e Educação Infantil"></option>
+                            <option value="Escola Batista Shalon (Não aceita cartão presente)"></option>
+                            <option value="Centro de Educação Infantil Portinari"></option>
+                            <option value="Centro de Educação Infantil Davinci"></option>
+                            <option value="Centro de Educação Infantil Anjo Gabriel"></option>
+                            <option value="AAM do Brasil">AAM do Brasil </option>
+                            <option value="ASPP Associação dos Servidores Públicos do Paraná">ASPP  Associação dos Servidores Públicos do Paraná</option>
+                            <option value="Assoc Brasileira de Advogados">Assoc Brasileira de Advogados</option>
+                            <option value="Assoc de Servidores da Previdência Social">Assoc de Servidores da Previdência Social</option>
+                            <option value="Assoc dos Analistas de Comércio Exterior">Assoc dos Analistas de Comércio Exterior </option>
+                            <option value="Assoc dos Empregados da Apex-Brasil">Assoc dos Empregados da Apex-Brasil </option>
+                            <option value="Assoc dos Servidores da Agência Brasileira de Inteligência">Assoc dos Servidores da Agência Brasileira de Inteligência </option>
+                            <option value="Assoc dos Servidores do Supremo Tribunal Federal">Assoc dos Servidores do Supremo Tribunal Federal </option>
+                            <option value="Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União">Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União </option>
+                            <option value="Assoc Nacional dos Analistas e Especialistas em Infraestrutura">Assoc Nacional dos Analistas e Especialistas em Infraestrutura</option>
+                            <option value="Assoc Nacional dos Defensores Públicos Federais">Assoc Nacional dos Defensores Públicos Federais</option>
+                            <option value="Assoc Nacional dos Peritos Criminais Federais">Assoc Nacional dos Peritos Criminais Federais </option>
+                            <option value="Assoc Nacional dos Procuradores Municipais">Assoc Nacional dos Procuradores Municipais </option>
+                            <option value="Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento">Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento</option>
+                            <option value="Assoc Nacional dos Serv do DNPM">Assoc Nacional dos Serv do DNPM </option>
+                            <option value="Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais">Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais</option>
+                            <option value="Assoc Renault (Colibri)">Assoc Renault (Colibri)</option>
+                            <option value="Bancários">Bancários</option>
+                            <option value="Banco do Brasil">Banco do Brasil</option>
+                            <option value="Bombeiros">Bombeiros</option>
+                            <option value="Caixa Econômica Federal">Caixa Econômica Federal </option>
+                            <option value="Callfarma">Callfarma</option>
+                            <option value="Clube Atlético Paranaense">Clube Atlético Paranaense</option>
+                            <option value="Clube Curitibano">Clube Curitibano</option>
+                            <option value="Clube Santa Mônica">Clube Santa Mônica </option>
+                            <option value="Electrolux">Electrolux</option>
+                            <option value="Empresas do Grupo J Malucelli">Empresas do Grupo J Malucelli</option>
+                            <option value="Federação Nacional dos Policiais Federais - FENAPF">Federação Nacional dos Policiais Federais - FENAPF</option>
+                            <option value="Leroy Merlin">Leroy Merlin</option>
+                            <option value="Ministério Público do Paraná">Ministério Público do Paraná</option>
+                            <option value="Mister Liber Brasil Corretora de Seguros">Mister Liber Brasil Corretora de Seguros </option>
+                            <option value="Paraná Clube">Paraná Clube</option>
+                            <option value="Petrobrás">Petrobrás</option>
+                            <option value="Polícia Civil">Polícia Civil </option>
+                            <option value="Polícia Federal">Polícia Federal</option>
+                            <option value="Polícia Militar">Polícia Militar</option>
+                            <option value="Policiais Rodoviários Federais">Policiais Rodoviários Federais</option>
+                            <option value="Sind dos Agentes de Atividades Penitenciárias">Sind dos Agentes de Atividades Penitenciárias </option>
+                            <option value="Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR">Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR</option>
+                            <option value="Sind dos Jornalistas">Sind dos Jornalistas </option>
+                            <option value="Sind dos Operadores de Transporte Escolar">Sind dos Operadores de Transporte Escolar</option>
+                            <option value="Sind Nac dos Analistas-Tributários da Receita Federal do Brasil">Sind Nac dos Analistas-Tributários da Receita Federal do Brasil </option>
+                            <option value="Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle">Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle </option>
+                            <option value="Sind Nac dos Serv das Agências Nacionais de Regulação">Sind Nac dos Serv das Agências Nacionais de Regulação</option>
+                            <option value="Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU">Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU </option>
+                            <option value="Sind Nac dos Serv do Ministério das Relações Exteriores">Sind Nac dos Serv do Ministério das Relações Exteriores</option>
+                            <option value="Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal">Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal </option>
+                            <option value="Sociedade Brasileira de Direito Médico e Bioética">Sociedade Brasileira de Direito Médico e Bioética </option>
+                            <option value="Wizard">Wizard</option>
+                            <option value="IBMP Instituto de Biologia Molecular do Paraná">IBMP Instituto de Biologia Molecular do Paraná</option>
+                            <option value="ASCREA-PR - Associação dos Servidores do CREA-PR">ASCREA-PR - Associação dos Servidores do CREA-PR</option>
+                            <option value="Copel Companhia Paranaense de Energia">Copel Companhia Paranaense de Energia</option>
+                            <option value="Gerdau Aços Longos S/A">Gerdau Aços Longos S/A</option>
+                            <option value="ACC - Associação Copel Curitiba">ACC - Associação Copel Curitiba</option>
+                            <option value="Branco Motores LTDA">Branco Motores LTDA</option>
+                            <option value="Escolinhas Parceiras">Escolinhas Parceiras</option>
+                            <option value="Loja França">Loja França</option>
+                            <option value="Quero Bolsa do Melhor Escola">Quero Bolsa do Melhor Escola</option>
+                            <option value="ASSESA - União das Associações de Empregados da SANEPAR">ASSESA - União das Associações de Empregados da SANEPAR</option>
+
+                            <option value="AAM do Brasil (ACP)">AAM do Brasil  (ACP)</option>
+                            <option value="ASPP  Associação dos Servidores Públicos do Paraná (ACP)">ASPP  Associação dos Servidores Públicos do Paraná (ACP)</option>
+                            <option value="Assoc Brasileira de Advogados (ACP)">Assoc Brasileira de Advogados (ACP)</option>
+                            <option value="Assoc de Servidores da Previdência Social (ACP)">Assoc de Servidores da Previdência Social (ACP)</option>
+                            <option value="Assoc dos Analistas de Comércio Exterior  (ACP)">Assoc dos Analistas de Comércio Exterior  (ACP)</option>
+                            <option value="Assoc dos Empregados da Apex-Brasil  (ACP)">Assoc dos Empregados da Apex-Brasil  (ACP)</option>
+                            <option value="Assoc dos Servidores da Agência Brasileira de Inteligência  (ACP)">Assoc dos Servidores da Agência Brasileira de Inteligência  (ACP)</option>
+                            <option value="Assoc dos Servidores do Supremo Tribunal Federal  (ACP)">Assoc dos Servidores do Supremo Tribunal Federal  (ACP)</option>
+                            <option value="Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União  (ACP)">Assoc Nacional dos Analistas do Poder Jud e do Min Púb da União  (ACP)</option>
+                            <option value="Assoc Nacional dos Analistas e Especialistas em Infraestrutura (ACP)">Assoc Nacional dos Analistas e Especialistas em Infraestrutura (ACP)</option>
+                            <option value="Assoc Nacional dos Defensores Públicos Federais (ACP)">Assoc Nacional dos Defensores Públicos Federais (ACP)</option>
+                            <option value="Assoc Nacional dos Peritos Criminais Federais  (ACP)">Assoc Nacional dos Peritos Criminais Federais  (ACP)</option>
+                            <option value="Assoc Nacional dos Procuradores Municipais  (ACP)">Assoc Nacional dos Procuradores Municipais  (ACP)</option>
+                            <option value="Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento (ACP)">Assoc Nacional dos Serv da Carreira de Planejamento e Orçamento (ACP)</option>
+                            <option value="Assoc Nacional dos Serv do DNPM  (ACP)">Assoc Nacional dos Serv do DNPM  (ACP)</option>
+                            <option value="Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais (ACP)">Assoc Nacional dos Serv Efetivos das Agências Reguladoras Federais (ACP)</option>
+                            <option value="Assoc Renault (Colibri) (ACP)">Assoc Renault (Colibri) (ACP)</option>
+                            <option value="Bancários (ACP)">Bancários (ACP)</option>
+                            <option value="Banco do Brasil (ACP)">Banco do Brasil (ACP)</option>
+                            <option value="Bombeiros (ACP)">Bombeiros (ACP)</option>
+                            <option value="Caixa Econômica Federal  (ACP)">Caixa Econômica Federal  (ACP)</option>
+                            <option value="Callfarma (ACP)">Callfarma (ACP)</option>
+                            <option value="Clube Atlético Paranaense (ACP)">Clube Atlético Paranaense (ACP)</option>
+                            <option value="Clube Curitibano (ACP)">Clube Curitibano (ACP)</option>
+                            <option value="Clube Santa Mônica  (ACP)">Clube Santa Mônica  (ACP)</option>
+                            <option value="Electrolux (ACP)">Electrolux (ACP)</option>
+                            <option value="Empresas do Grupo J Malucelli (ACP)">Empresas do Grupo J Malucelli (ACP)</option>
+                            <option value="Federação Nacional dos Policiais Federais - FENAPF (ACP)">Federação Nacional dos Policiais Federais - FENAPF (ACP)</option>
+                            <option value="Leroy Merlin (ACP)">Leroy Merlin (ACP)</option>
+                            <option value="Ministério Público do Paraná (ACP)">Ministério Público do Paraná (ACP)</option>
+                            <option value="Mister Liber Brasil Corretora de Seguros  (ACP)">Mister Liber Brasil Corretora de Seguros  (ACP)</option>
+                            <option value="Paraná Clube (ACP)">Paraná Clube (ACP)</option>
+                            <option value="Petrobrás (ACP)">Petrobrás (ACP)</option>
+                            <option value="Polícia Civil  (ACP)">Polícia Civil  (ACP)</option>
+                            <option value="Polícia Federal (ACP)">Polícia Federal (ACP)</option>
+                            <option value="Polícia Militar (ACP)">Polícia Militar (ACP)</option>
+                            <option value="Policiais Rodoviários Federais (ACP)">Policiais Rodoviários Federais (ACP)</option>
+                            <option value="Sind dos Agentes de Atividades Penitenciárias  (ACP)">Sind dos Agentes de Atividades Penitenciárias  (ACP)</option>
+                            <option value="Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR (ACP)">Sind dos Farmacêuticos do Estado do Paraná - SINDIFAR (ACP)</option>
+                            <option value="Sind dos Jornalistas  (ACP)">Sind dos Jornalistas  (ACP)</option>
+                            <option value="Sind dos Operadores de Transporte Escolar (ACP)">Sind dos Operadores de Transporte Escolar (ACP)</option>
+                            <option value="Sind Nac dos Analistas-Tributários da Receita Federal do Brasil  (ACP)">Sind Nac dos Analistas-Tributários da Receita Federal do Brasil  (ACP)</option>
+                            <option value="Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle  (ACP)">Sind Nac dos Auditores e Técnicos Federais de Finanças e Controle  (ACP)</option>
+                            <option value="Sind Nac dos Serv das Agências Nacionais de Regulação (ACP)">Sind Nac dos Serv das Agências Nacionais de Regulação (ACP)</option>
+                            <option value="Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU  (ACP)">Sind Nac dos Serv do Min da União e Conselho Nac - SINASEMPU  (ACP)</option>
+                            <option value="Sind Nac dos Serv do Ministério das Relações Exteriores (ACP)">Sind Nac dos Serv do Ministério das Relações Exteriores (ACP)</option>
+                            <option value="Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal  (ACP)">Sind Nac dos Serv do Plano Especial de Cargos da Polícia - Federal  (ACP)</option>
+                            <option value="Sociedade Brasileira de Direito Médico e Bioética  (ACP)">Sociedade Brasileira de Direito Médico e Bioética  (ACP)</option>
+                            <option value="Wizard (ACP)">Wizard (ACP)</option>
+                            <option value="IBMP Instituto de Biologia Molecular do Paraná (ACP)">IBMP Instituto de Biologia Molecular do Paraná (ACP)</option>
+                            <option value="ASCREA-PR - Associação dos Servidores do CREA-PR (ACP)">ASCREA-PR - Associação dos Servidores do CREA-PR (ACP)</option>
+                            <option value="Copel Companhia Paranaense de Energia (ACP)">Copel Companhia Paranaense de Energia (ACP)</option>
+                            <option value="Gerdau Aços Longos S/A (ACP)">Gerdau Aços Longos S/A (ACP)</option>
+                            <option value="ACC - Associação Copel Curitiba (ACP)">ACC - Associação Copel Curitiba (ACP)</option>
+                            <option value="Branco Motores LTDA (ACP)">Branco Motores LTDA (ACP)</option>
+                            <option value="Escolinhas Parceiras (ACP)">Escolinhas Parceiras (ACP)</option>
+                            <option value="Loja França (ACP)">Loja França (ACP)</option>
+                            <option value="Quero Bolsa do Melhor Escola (ACP)">Quero Bolsa do Melhor Escola (ACP)</option>
+
+
+                            <!-- PArcerias CAAB - obtidas da planilha enviada pelo Eduardo em 24/05/2023 -->
+
+                            
+                            <option value="SINDFAZ (GERAL)">SINDFAZ</option>
+                            <option value="Coamo (GERAL)">Coamo</option>
+                            <option value="Grupo Boticário (GERAL)">Grupo Boticário</option>
+                            <option value="CAIXA dos Advogados do Paraná (GERAL)">CAIXA dos Advogados do Paraná</option>
+                            <option value="New Value (GERAL)">New Value</option>
+                            <option value="Sumitomo Rubber do Brasil (EAFRG)">Sumitomo Rubber do Brasil</option>
+                            <option value="Autopeças e Serviços Auto M (EAFRG)">Autopeças e Serviços Auto M</option>
+                            <option value="Grupo Leblon (EAFRG)">Grupo Leblon</option>
+                            <option value="Sanepar (CAPI)">Sanepar</option>
+                            <option value="Strokmatic (CAPI)">Strokmatic</option>
+                            <option value="ASEPI (CAPI)">ASEPI</option>
+                            <option value="Polícia Militar (CAPI)">Polícia Militar</option>
+                            <option value="Bombeiro (CAPI)">Bombeiro</option>
+                            <option value="Guarda Municipal (CAPI)">Guarda Municipal</option>
+                            <option value="Fisk (CAPI)">Fisk</option>
+                            <option value="Kumon (CAPI)">Kumon</option>
+                            <option value="Perkons S. A. (CAPI)">Perkons S. A.</option>
+                            <option value="Bony Plus (CAPI)">Bony Plus</option>
+                            <option value="SINSERP (CAPI)">SINSERP</option>
+                            <option value="BBS Brasil Formação de atletas (CAPI)">BBS Brasil Formação de atletas</option>
+                            <option value="Magius Metalúrgica Industrial (EAAP)">Magius Metalúrgica Industrial</option>
+                            <option value="Multilit (EAAP)">Multilit</option>
+                            <option value="OAB União da Vitória (EAUV)">OAB União da Vitória</option>
+                            <option value="Pomade (EAUV)">Pomade</option>
+                            <option value="Novacki (EAUV)">Novacki</option>
+                            <option value="Batalhão de Polícia Ambiental (CASJP)">Batalhão de Polícia Ambiental</option>
+                            <option value="Academia H2O (CASJP)">Academia H2O</option>
+                            <option value="Assinfra- Infraero (CASJP)">Assinfra- Infraero</option>
+                            <option value="Associação Colibri-Renault (CASJP)">Associação Colibri-Renault</option>
+                            <option value="P.H.D Academias (CAC)">P.H.D Academias</option>
+                            <option value="Coca Cola (CAC)">Coca Cola</option>
+                            <option value="Eletriza (CAC)">Eletriza</option>
+                            <option value="APCEF (CAC)">APCEF</option>
+                            <option value="Agro Factory Com. De Prod. Agropec. Ltda. (CCABR)">Agro Factory Com. De Prod. Agropec. Ltda.</option>
+                            <option value="Ases - Associação dos Servidores do SERPRO (CCABR)">Ases - Associação dos Servidores do SERPRO</option>
+                            <option value="Associação dos Delegados de Policia do Estado (CCABR)">Associação dos Delegados de Policia do Estado</option>
+                            <option value="Associação dos Lojistas do Shopping Mueller (CCABR)">Associação dos Lojistas do Shopping Mueller</option>
+                            <option value="Associação Lojistas do Shopping Italia (CCABR)">Associação Lojistas do Shopping Italia</option>
+                            <option value="Bristol Adm de Hoteis e cond (CCABR)">Bristol Adm de Hoteis e cond</option>
+                            <option value="CEABS serviços AS (CCABR)">CEABS serviços AS</option>
+                            <option value="CELEPAR/FUNCEL (CCABR)">CELEPAR/FUNCEL</option>
+                            <option value="Conselho Regional de Farmacia do Estado PR (CCABR)">Conselho Regional de Farmacia do Estado PR</option>
+                            <option value="Influx centro Civico (CCABR)">Influx centro Civico</option>
+                            <option value="Hospital Pilar (CCABR)">Hospital Pilar</option>
+                            <option value="Kumon (CCABR)">Kumon</option>
+                            <option value="Mobi Dick (CCABR)">Mobi Dick</option>
+                            <option value="OAB Parana (CCABR)">OAB Parana</option>
+                            <option value="Odontoklinic Clinica Odontologica (CCABR)">Odontoklinic Clinica Odontologica</option>
+                            <option value="Sindicato das Agencias de propaganda do PR (CCABR)">Sindicato das Agencias de propaganda do PR</option>
+                            <option value="Sindicato dos Bancarios de Curitiba (CCABR)">Sindicato dos Bancarios de Curitiba</option>
+                            <option value="Sindicato dos Policiais Rodoferroviarios (CCABR)">Sindicato dos Policiais Rodoferroviarios</option>
+                            <option value="KNN Idiomas Sitio Cercado (CAAB)">KNN Idiomas Sitio Cercado</option>
+                            <option value="Wizard Xaxim (CAAB)">Wizard Xaxim</option>
+                            <option value="APPA (Administração dos Portos de Paranaguá e Antonina) (CAPGUA)">APPA (Administração dos Portos de Paranaguá e Antonina)</option>
+                            <option value="Prefeitura Municipal de Paranaguá (CAPGUA)">Prefeitura Municipal de Paranaguá</option>
+                            <option value="Marinha do Brasil (Através da associação Abrigo ao marinheiro) (CAPGUA)">Marinha do Brasil (Através da associação Abrigo ao marinheiro)</option>
+                            <option value="Câmara Municipal de Paranaguá (CAPGUA)">Câmara Municipal de Paranaguá</option>
+                            <option value="Sindicato Bancários Paranaguá (CAPGUA)">Sindicato Bancários Paranaguá</option>
+                            <option value="Sintracoosul - sindicato dos trabalhadores cooperados- Sul do PR (CAPGUA)">Sintracoosul - sindicato dos trabalhadores cooperados- Sul do PR</option>
+                            <option value="Sindicato dos Taxistas de Paranaguá (CAPGUA)">Sindicato dos Taxistas de Paranaguá</option>
+
+                            
+                        </datalist>
+
+                        <input id="desconto4" style="width: 17.5%;" type="number" value="0" min="0" max="20" step="1" 
+                            class="descIndiv" onchange="calculaMensalidade4()">
+                        
+                        <select id="parcelas4" style="width: 17.5%;" class="parcelas" onchange="calculaMensalidade4()">
+                            
+                            <option value="12" selected>12x</option>
+                            <option value="11">11x</option>
+                            <option value="10">10x</option>
+                            <option value="9">9x</option>
+                            <option value="8">8x</option>
+                            <option value="7">7x</option>
+                            <option value="6">6x</option>
+                            <option value="5">5x</option>
+                            <option value="4">4x</option>
+                            <option value="3">3x</option>
+                            <option value="2">2x</option>
+                            <option value="1">1x</option>
+                        </select>
+
+                        <input id="valorFinal4" style="width: 25%; color: #0D6EFD;" type="text" name="valor" 
+                            class="form-control form-control-sm valor" readonly>
+                    </div>
+
+                    <!-- checkbox area4 -->
+                    <div class="divCheck">
+                        <div>
+                            <label for="checkLaudo4">Laudo/Atendimento especial</label>
+                            <input type="checkbox" name="" id="checkLaudo4" onclick="temLaudo4()">
+                        </div>
+                        <div class="div-didaticos">
+                            <label for="checkDidaticos4">Incluir Didáticos</label>
+                            <input type="checkbox" name="" id="checkDidaticos4" onclick="incluirDidaticos4()">
+                        </div>
+                    </div>
+
+                </div>       
+
+             
+                <!-- TOTAL -->
+                <div class="conteinerForm" id="conteinerFormTotal">
+
+                        <div id="labelTotal">TOTAL</div>
+                        <div id="divSomaTotal">R$ 0,00</div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- CONTEINER DIREITA -->
+    <div id="direita">
+
+        <!-- TABELA RESUMO -->
+            <table id="tabela-resumo" class="table">
+                <thead class="bg-primary" style="color: white;">
+                    <tr>
+                        <th style="width: 30%; text-align: left;">Nome</th>
+                        <th style="text-align: center;">Série</th>
+                        <th style="text-align: right;">Integral</th>
+                        <th style="text-align: right;">D. Mês</th>
+                        <th style="text-align: right;">D. Ano</th>
+                        <th style="text-align: right;">Final</th>
+                    </tr>
+                </thead>             
+
+                <!-- ALUNO 1 - RESUMO-->
+                <tr>
+                    <td id="n1"></td>
+                    <td id="sr1"></td>
+                    <td id="vI1" style="text-align: right;"></td>
+                    <td id="dm1" style="text-align: right;"></td>
+                    <td id="da1" style="text-align: right;"></td>
+                    <td id="vf1" style="text-align: right;"></td>
+                </tr>
+
+                <!-- ALUNO 2 - RESUMO-->
+                <tr>
+                    <td id="n2"></td>
+                    <td id="sr2"></td>
+                    <td id="vI2" style="text-align: right;"></td>
+                    <td id="dm2" style="text-align: right;"></td>
+                    <td id="da2" style="text-align: right;"></td>
+                    <td id="vf2" style="text-align: right;"></td>
+                </tr>
+
+                <!-- ALUNO 3 - RESUMO-->
+                <tr>
+                    <td id="n3"></td>
+                    <td id="sr3"></td>
+                    <td id="vI3" style="text-align: right;"></td>
+                    <td id="dm3" style="text-align: right;"></td>
+                    <td id="da3" style="text-align: right;"></td>
+                    <td id="vf3" style="text-align: right;"></td>
+                </tr>
+
+                <!-- ALUNO 4 - RESUMO-->
+                <tr>
+                    <td id="n4"></td>
+                    <td id="sr4"></td>
+                    <td id="vI4" style="text-align: right;"></td>
+                    <td id="dm4" style="text-align: right;"></td>
+                    <td id="da4" style="text-align: right;"></td>
+                    <td id="vf4" style="text-align: right;"></td>
+                </tr>
+
+                <!-- VALORES TOTAIS - RESUMO-->
+                <tr id="trTotal">
+                    <td>TOTAL</td>
+                    <td></td>
+                    <td id="somaIntegral" style="text-align: right;"></td>
+                    <td id="dMes" style="text-align: right;"></td>
+                    <td id="dAno" style="text-align: right;"></td>
+                    <td id="somaTotal" style="text-align: right;"></td>
+                </tr>
+                
+            </table>
+            
+
+            <!-- Opções de pagamento -->
+            
+            <table id="tabela-opcoes-pg">
+                
+                <tr>
+                    <td>
+                        <input type="radio" id="btn4" name="pgto" value="Opção de pagamento: parcelado no boleto" onclick="myFunctionPg()" checked>
+                        <label for="parceladoBoleto">Parcelado no boleto</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="btn3" name="pgto" value="Opção de pagamento: parcelado no crédito." onclick="myFunctionPg()">
+                        <label for="parceladoCredito">Parcelado no crédito</label>  
+                    </td>
+                    <td>
+                        <input type="radio" id="btn1" name="pgto" value="Opção de pagamento: à vista no débito ou dinheiro." onclick="myFunctionPg()">
+                        <label for="vistaDebitoDin">À vista débito</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="btn2" name="pgto" value="Opção de pagamento: à vista no crédito." onclick="myFunctionPg()">
+                        <label for="vistaCredito">À vista crédito</label>
+                    </td>
+                </tr>
+            </table>
+
+    <!-- Botões de informações adicionais -->
+    <div id="conteiner-btns-esquerda">
+        <button id="btn-ct" class="btn btn-primary" onclick="toggleCT()">Contraturno</button>
+        <button id="btn-taxa" class="btn btn-primary" onclick="toggleInclusao()">Inclusão</button>
+        <button id="btn-materiais" class="btn btn-primary" onclick="toggleMateriais()">Materiais</button>
+        <button id="btn-livros" class="btn btn-primary" onclick="toggleLivros()">Loja</button>
+        <button id="btn-cantina" class="btn btn-primary" onclick="toggleCantina()">Cantina</button>
+        <button id="btn-transporte" class="btn btn-primary" onclick="toggleTransporte()">Transporte</button>
+        <button id="btn-documentos" class="btn btn-primary" onclick="toggleDocumentos()">Documentos</button>
+    </div>  
+
+
+<div class="container-didaticos-taxa">
+
+    <!-- Taxa -->
+    <div id="taxa-eventos">
+        <label for="taxa">Taxa</label>
+        <input id="taxa" type="text" value="560" class="form-control form-control-sm valor">
+        <img src="imagens/calendar.jpg" alt="" id="calendar-icon" onclick="toggleTaxa()">
+        
+    </div>
+
+     <!-- Atendentes -->
+     <div class="conteiner-atendentes">
+        <select class="form-select form-select-sm" aria-label="Default select example" id="select-atendentes">
+            <option selected value="">Atendente</option>
+            <option value="Lucas - lucas.lima@educadventista.org.br">Lucas</option>
+            <option value="Thiago - thiago.carvalho@educadventista.org.br">Thiago</option>
+            <option value="Mirian - mirian.montin@educadventista.org.br">Mirian</option>
+            <option value="Eliesio - Eliesio.alencar@educadventista.org.br">Eliesio</option>
+            
+          </select>
+    </div>
+
+</div>
+
+    
+        <!-- Campo para Observações -->
+        <div id="observacoes">
+            <label for="tx-obs">Observações</label>
+            <textarea name="tx-obs" id="input-obs" cols="26" rows="20"></textarea>
+        </div>
+       
+        <!-- Conteiner Botão Copiar / Limpar / Imprimir -->
+        <div id="conteiner-buttons">
+            <button class="btn btn-secondary"  onclick="copiarDados()">Copiar</button>
+            <a href="" class="btn btn-secondary">Limpar</a>
+            <button id="btn-imprimir" class="btn btn-primary"  onclick="gerarPDF()">Imprimir</button>
+
+        </div>
+        
+    </div>
+</div>
+
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ----------- Área impressão ------------------ -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+
+<div id="proposta_resumo">
+
+    <!-- Cabeçalho -->
+    <div id="header">
+        <img id="logo" src="imagens/cabecalho.jpg" />   
+    </div>
+
+    <h5 id="titulo_resumo2" class="titulo_resumo2">VALORES 2024</h5>
+    <p id="resp-e-contato"></p>
+
+    <div id="main">
+
+        <!-- Resumo filhos série e valores -->
+        <table id="tabela_resumo">
+
+            <!-- Cabeçalho da tabela -->
+            <tr>
+                <th style="width: 40%; text-align: left;">Aluno(s)</th>
+                <th style="width: 15%; text-align: left;">Série</th>
+                <th style="width: 15%; text-align: left;">Didáticos</th>
+                <th style="width: 10%; text-align: center;">Parcelas</th>
+                <th style="width: 20%; text-align: center;">Valor</th>
+            </tr>
+
+            <!-- aluno1 resumo -->
+            <tr>
+                <td id="aluno1" style="width: 50%; text-align: left;"></td>
+                <td id="sre1" style="text-align: left;"></td>
+                <td id="didaticos1" style="text-align: left;"></td>
+                <td id="p1" style="text-align: center;"></td>
+                <td id="v1" style="text-align: right; padding-right: 7px;"></td>
+            </tr>
+
+            <!-- aluno2 resumo -->
+            <tr>
+                <td id="aluno2" style="width: 50%; text-align: left;"></td>
+                <td id="sre2" style="text-align: left;"></td>
+                <td id="didaticos2" style="text-align: left;"></td>
+                <td id="p2" style="text-align: center;"></td>
+                <td id="val2" style="text-align: right; padding-right: 7px;"></td>
+            </tr>
+
+            <!-- aluno3 resumo -->
+            <tr>
+                <td id="aluno3" style="width: 50%; text-align: left;"></td>
+                <td id="sre3" style="text-align: left;"></td>
+                <td id="didaticos3" style="text-align: left;"></td>
+                <td id="p3" style="text-align: center;"></td>
+                <td id="val3" style="text-align: right; padding-right: 7px;"></td>
+            </tr>
+
+            <!-- aluno4 resumo -->
+            <tr>
+                <td id="aluno4" style="width: 50%; text-align: left;"></td>
+                <td id="sre4" style="text-align: left;"></td>
+                <td id="didaticos4" style="text-align: left;"></td>
+                <td id="p4" style="text-align: center;"></td>
+                <td id="val4" style="text-align: right; padding-right: 7px;"></td>
+            </tr>
+
+            <!-- Total do resumo - última linha -->
+            <tr id="last_line">
+                <td style="font-weight: 700;">Total</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="totalFinal"></td>
+            </tr>
+        </table>
+
+        <!-- Observações Didáticos, Validade Proposta e Opção de pagamento -->
+        <div class="adicionais footer-item" id="footer-item-obs">
+            <div class="title-item">INFORMAÇÕES ADICIONAIS</div>
+            <div id="textPg" class="content-item-obs" style="display: none;"></div>
+            <div id="textD" class="content-item-obs" style="display:none">Didáticos inclusos. Entrega no início do período de aulas, mediante quitação das mensalidades de janeiro e fevereiro.</div>
+            <div class="content-item-obs" id="last-child-obs">Esta proposta não é garantia de vaga. Ela é pessoal, intransferível e sujeita a alterações. Portanto, está condicionada à confidencialidade. Eventuais negociações financeiras estão condicionadas à não necessidade de atendimento especializado ou diferenciado, em qualquer tempo ao longo do ano letivo. Válida por 3 dias úteis.</div>
+        </div>
+
+        <!-- Livros, materiais e uniformes -->
+        <div class="adicionais footer-item" id="footer-item-obs">
+            <div class="title-item">LIVROS, MATERIAIS E UNIFORMES</div>
+            <div class="content-item-obs" id="last-child-obs">Acesse todas as informações através do link da nossa loja, Novo Tempo Store: https://linktr.ee/novotempostoreasp.
+            </div>
+        </div>
+
+        <!-- Taxa de eventos -->
+        <div class="footer">
+
+            <div class="footer-item">
+             <div class="title-item">TAXA DE EVENTOS</div>
+             <div class="content-item"><span id="taxa-valor"></span> por aluno no ato da matrícula - à vista ou até 6x no cartão. Cobre ações em datas especiais do calendário escolar (páscoa, mães, pais, etc.).</div>
+            </div>
+           
+            <div class="footer-item">
+             <div class="title-item">CANTINA</div>
+             <div class="content-item">Serviço terceirizado com supervisão de nutricionista. Formas de pagamento: à vista, créditos antecipados ou pelo aplicativo VLUPT. Até o 2º EF, opção de contrato mensal (incluso: 1 salgado, 1 doce, 1 suco, 1 fruta). Contato whatsapp: 41-99672-0012</div>
+            </div>
+
+        </div>
+
+        <!-- Contraturno -->
+        <div class="adicionais footer-item" id="footer-item-ct">
+
+            <div class="title-item">CONTRATURNO</div>
+
+            <table class="tabelaCt2" style="width: 93%; margin: 10px auto 0 auto;">
+                <tr  style="text-align: center;">
+                    <td colspan="4"><em>Para alunos que estudam à tarde e chegam pela manhã</em></td>
+                </tr>
+                <tr>
+                    <td style="width: 10%;">Plano</td>
+                    <td style="width: 10%;">Chegada</td>
+                    <td style="width: 70%;">Serviços</td>
+                    <td style="width: 20%;">Valor</td>
+                </tr>
+                <tr>
+                    <td>6h</td>
+                    <td>7:00</td>
+                    <td style="text-align: left;">Almoço, Tarefas, 2 Lanches, Projeto, 2 Oficinas, Esporte, Recreação</td>
+                    <td>R$ 830,30</td>
+                </tr>
+                <!-- <tr>
+                    <td>3h</td>
+                    <td>10:00</td>
+                    <td style="text-align: left;">Almoço, 1 Lanche, Tarefas, Projeto, 1 Oficina</td>  
+                    <td>R$ 577,60</td>
+                </tr> -->
+            </table>
+    <br>
+            <table class="tabelaCt2" style="width: 93%; margin: 10px auto 14px auto;">
+                <tr  style="text-align: center;">
+                    <td colspan="4"><em>Para alunos que estudam pela manhã e permanecem à tarde</em></td>
+                </tr>
+                <tr>
+                    <td style="width: 10%;">Plano</td>
+                    <td style="width: 10%;">Saída</td>
+                    <td style="width: 70%;">Serviços</td>
+                    <td style="width: 20%;">Valor</td>
+                </tr>
+                <!-- <tr>
+                    <td>3h</td>
+                    <td>15:00</td>
+                    <td style="text-align: left;">Almoço, 1 Lanche, Tarefas, Projeto, 1 Oficina</td>  
+                    <td>R$ 577,60</td>
+                </tr> -->
+                <tr>
+                    <td>6h</td>
+                    <td>18:00</td>
+                    <td style="text-align: left;">Almoço, Tarefas, 2 Lanches, Projeto, 2 Oficinas, Esporte, Recreação</td>
+                    
+                    <td>R$ 830,30</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Horários das aulas -->
+        <!-- <div class="adicionais footer-item" id="footer-item-ct">
+
+            <div class="title-item">HORÁRIOS DAS AULAS</div>
+
+           <P>Item 1</P>
+           <P>Item 2</P>
+           <P>Item 3</P>
+           <P>Item 4</P>
+           <P>Item 5</P>
+        </div>
+    </div> -->
+
+    <!-- Observações -->
+    <div class="adicionais footer-item" id="observacoes-text-area">
+        <div class="title-item">OBSERVAÇÕES</div>
+        <div class="content-item-obs" id="obs-print"></div>        
+    </div>
+
+    <!-- Atendente e data -->
+    <div id="nome-atendente"></div>
+    <div id="dataAtual"></div>
+
+</div>
+
+<br>
+
+<input id="colar"></input>
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ----------- Área popups ------------------ -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- POPUP TAXA -->
+<div class="popup popupTaxa" id="popupTaxa">
+
+    <div class="overlay"></div>
+    
+    <div class="content">
+        <div class="close-btn" onclick="toggleTaxa()">&times;</div>
+        <br><br>
+        <h5>Taxa de Eventos</h5>
+        <hr>
+        <ul>
+            <li>Alunos novos - R$ 560,00 (valor único)</li>
+        </ul>
+        <hr>
+        <ul>
+            <li>Alunos veteranos</li><br>
+            <p>=> Até 17/09 - R$ 392,00</p>
+            <p>=> A partir de 18/09 - R$ 560,00</p>
+        </ul>
+        <hr>
+       
+    </div>
+</div>
+
+
+<!-- POPUP CONTRATURNO -->
+<div class="popup" id="popupCt">
+
+    <div class="overlay"></div>
+    
+    <div class="content">
+        <div class="close-btn" onclick="toggleCT()">&times;</div>
+        <h5>Contraturno</h5>
+
+        <table class="tabelaCt" style="width: 90%; margin: 30px auto 0 auto; font-size: small;">
+            <th style="width: 10%;">Plano</th>
+            <th style="width: 10%;">Chegada</th>
+            <th style="width: 60%;">Serviços</th>
+            <th style="width: 10%;">Desconto</th>
+            <th style="width: 20%;">Valor</th>
+
+            <tr>
+                <td>6h</td>
+                <td>7:00</td>
+                <td style="text-align: left; font-size: smaller;">Almoço, Higiene, Descanso, Tarefas, Lanche 1, Lanche 2, Projeto, Oficina 1, Oficina 2, Esporte, Recreação</td>
+                <td>0%</td>
+                <td>R$ 830,30</td>
+            </tr>
+            <!-- <tr>
+                <td>3h</td>
+                <td>10:00</td>
+                <td style="text-align: left;">Almoço, Higiene, Descanso, Tarefas, 1 Lanche, Projeto, Oficina 1</td>
+                <td>20%</td>
+                <td>R$ 577,60</td>
+            </tr> -->
+        </table>
+
+        <table class="tabelaCt" style="width: 90%; margin: 30px auto 0 auto; font-size: small;">
+            <th style="width: 10%;">Plano</th>
+            <th style="width: 10%;">Saída</th>
+            <th style="width: 60%;">Serviços</th>
+            <th style="width: 10%;">Desconto</th>
+            <th style="width: 20%;">Valor</th>
+
+            <!-- <tr>
+                <td>3h</td>
+                <td>15:00</td>
+                <td style="text-align: left;">Almoço, Higiene, Descanso, Tarefas, 1 Lanche, Projeto, Oficina 1</td>
+                <td>20%</td>
+                <td>R$ 577,60</td>
+            </tr> -->
+            <tr>
+                <td>6h</td>
+                <td>18:00</td>
+                <td style="text-align: left; font-size: smaller;">Almoço, Higiene, Descanso, Tarefas, Lanche 1, Lanche 2, Projeto, Oficina 1, Oficina 2, Esporte, Recreação</td>
+                <td>0%</td>
+                <td>R$ 830,30</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- POPUP INCLUSÃO -->
+<div class="popup" id="popupInclusao">
+
+    <div class="overlay"></div>
+    
+    <div class="content">
+       
+        <div class="close-btn" onclick="toggleInclusao()">&times;</div>
+       
+        <h5>Inclusão</h5>
+        
+        <ol id="taxaol">
+       
+            <li>Capacidade de atendimento da escola está definida em edital.</li>
+       
+            <li><a href="edital-inclusao.pdf" target="_blank">Consultar edital de vagas.</a></li>
+
+            <li><a href="https://mailadventistas-my.sharepoint.com/:x:/g/personal/douglas_leal_usb_educadventista_org1/EUjLaFFO1WpPtN6goXwio2kB9PpvXatphEfx6efMxJ2qXw?e=5B66oG" target="_blank">Verificar rematrículas.</a></li>
+
+            <li>Benefícios não elegíveis para casos com tutor: 
+                
+                <ul>
+                    <li>Descontos na mensalidade.</li>
+                    <li>Promoção de didáticos.</li>
+                </ul> 
+            </li>
+            
+            <li>Necessário agendar entrevista com orientadora.</li>
+
+            <li>Aluno precisa estar presente para conhecimento de suas necessidades.</li>
+        </ol>
+    </div>
+</div>
+
+
+<!-- POPUP LISTA DE MATERIAIS -->
+<div class="popup" id="popupMateriais">
+
+    <div class="overlay"></div>
+    
+    <div class="content">
+        <div class="close-btn" onclick="toggleMateriais()">&times;</div>
+        <h5>Listas de Materiais</h5>
+        
+        <table class="tabela-didaticos">
+            
+            <tr>
+                <td><a href="materiais\pre3.pdf" target="_blank">Infantil 3 anos</a></td>
+                <td><a href="materiais\6M.pdf" target="_blank">6º ano Fundamental</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="materiais\pre4.pdf" target="_blank">Infantil 4 anos</a></td>
+                <td><a href="materiais\6M.pdf" target="_blank">7º ano Fundamental</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="materiais\pre5.pdf" target="_blank">Infantil 5 anos</a></td>
+                <td><a href="materiais\6M.pdf" target="_blank">8º ano Fundamental</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="materiais\1ef.pdf" target="_blank">1º ano Fundamental</a></td>
+                <td><a href="materiais\6M.pdf" target="_blank">9º ano Fundamental</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="materiais\2ef.pdf" target="_blank">2º ano Fundamental</a></td>
+                <td><a href="materiais\6M.pdf" target="_blank">1º ano Médio</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="materiais\3ef.pdf" target="_blank">3º ano Fundamental</a></td>
+                <td><a href="materiais\6M.pdf" target="_blank">2º ano Médio</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="materiais\4ef.pdf" target="_blank">4º ano Fundamental</a></td>
+                <td><a href="materiais\6M.pdf" target="_blank">3º ano Médio</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="materiais\5ef.pdf" target="_blank">5º ano Fundamental</a></td>
+                <td><a href="materiais/ct-p2.pdf" target="_blank">Contraturno - Pré-2ºEF</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="materiais/ct-35.pdf" target="_blank">Contraturno - 3º-5º</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+
+<!-- POPUP LOJA -->
+<div class="popup" id="popupLivros">
+
+    <div class="overlay"></div>
+    
+    <div class="content">
+        <div class="close-btn" onclick="toggleLivros()">&times;</div>
+        <h5>Novo Tempo Store</h5>
+        <br><br>
+        <p><a href="https://linktr.ee/novotempostoreasp" target="_blank"><img src="imagens/ntstore-logo.png" alt="" id="nt-logo"></a></p>
+        <p><a href="https://catalogontstore.asp.org.br/" target="_blank"><img src="imagens/catalogo.jpg" alt="" id="catalogo-logo"></a></p>
+        <!-- <p>Promoção: se for pagante integral, a família recebe os didáticos.</p> -->
+        <!-- <p>1º EM - material novo, reformulado para novo Ensino Médio.</p> -->
+    </div>
+</div>
+<!-- POPUP CANTINA -->
+
+<div class="popup" id="popupCantina">
+
+    <div class="overlay"></div>
+    
+    <div class="content">
+        <div class="close-btn" onclick="toggleCantina()">&times;</div>
+        <h5>Cantina</h5>
+        <br><br>
+        <p>Serviço terceirizado com supervisão de Nutricionista. </p>
+        <p>Pagamento à vista ou através de créditos antecipados. </p>
+        <p>Até o 2º EF, opção de contrato mensal (incluso: 1 salgado, 1 doce, 1 suco, 1 fruta). </p>
+        <p>WhatsApp: 41-99672-0012</p>
+        <p><a href="https://vlupt.com/" target="_blank"><img src="imagens/vlupt-logo.jpg" id="vlupt-logo" alt=""></a></p>
+        
+    </div>
+</div>
+
+
+<!-- POPUP TRANSPORTE ESCOLAR -->
+
+<div class="popup" id="popupTransporte">
+
+    <div class="overlay"></div>
+    
+    <div class="content">
+        <div class="close-btn" onclick="toggleTransporte()">&times;</div>
+        <h5>Transporte Escolar</h5>
+    <br><br>
+    <p>Serviço terceirizado.</p>
+    <p>Contato diretamente com os prestadores.</p>
+    <p><a href="transporte-escolar.pdf" target="_blank">Imprimir lista.</a></p>
+        
+    </div>
+</div>
+<br>
+
+
+<!-- POPUP DOCUMENTOS PARA MATRÍCULA -->
+<div class="popup" id="popupDocumentos">
+
+    <div class="overlay"></div>
+    
+    <div class="content">
+        <div class="close-btn" onclick="toggleDocumentos()">&times;</div>
+        <h5>Documentos para Matrícula</h5>
+    <br><br>
+    <ol>
+        <li>Certidão de Nascimento, RG e CPF do aluno (CPF é obrigatório).</li>
+        <li>Comprovante de residência atualizado (só pode ser fatura de água, luz ou telefone).</li>
+        <li>Carteirinha e declaração de vacinação atualizada do aluno.</li>
+        <li>RG e CPF dos pais (<strong>somente o RG, CPF ou Carteira Profissional</strong>).</li>
+        <li>Declaração de Transferência do aluno- que deverá ser entregue no ato da matrícula.</li>
+        <li>Boletim escolar do aluno obrigatório. </li>
+        <li>Histórico escolar do aluno.</li>
+        <li>Se o(a) aluno(a) estiver vindo de outra escola, o Histórico Escolar fica pronto após 30 dias da data do pedido de transferência e precisa ser entregue com urgência na secretaria.</li>
+        <li>Declaração de quitação financeira, se for colégio privado.</li>
+        <li>Cópia do Termo de Guarda e Tutela (Caso os pais não sejam os responsáveis legais).</li>
+    </ol>
+
+    <p><a href="materiais/matricula.pdf" target="_blank" id="lista-materiais">Imprimir lista</a></p>
+        
+    </div>
+</div>
+
+</body>
+</html>
